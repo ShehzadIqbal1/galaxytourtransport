@@ -1,0 +1,14 @@
+# Galaxy Tour & Transport — Hostinger / Apache static hosting
+Options -Indexes
+
+# Force HTTPS (uncomment after SSL is active on the domain)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Old corridor URLs → SEO landing pages
+Redirect 301 /routes/dubai-to-abu-dhabi /dubai-to-abu-dhabi-car-lift
+Redirect 301 /routes/abu-dhabi-to-dubai /abu-dhabi-to-dubai-car-lift
+
+# Serve folder index.html cleanly
+DirectoryIndex index.html

@@ -84,12 +84,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
-  const routeEntries: MetadataRoute.Sitemap = routes.map((route) => ({
-    url: `${siteConfig.url}/routes/${route.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.75,
-  }));
+  const redirectedRouteSlugs = new Set([
+    "dubai-to-abu-dhabi",
+    "abu-dhabi-to-dubai",
+  ]);
+
+  const routeEntries: MetadataRoute.Sitemap = routes
+    .filter((route) => !redirectedRouteSlugs.has(route.slug))
+    .map((route) => ({
+      url: `${siteConfig.url}/routes/${route.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    }));
 
   const locationEntries: MetadataRoute.Sitemap = locations.map((location) => ({
     url: `${siteConfig.url}/locations/${location.slug}`,

@@ -173,7 +173,7 @@ export function ServiceLandingView({ page }: ServiceLandingViewProps) {
 
       <FAQSection
         eyebrow="FAQs"
-        title="Common questions"
+        title="Frequently asked questions"
         description="Quick answers before you message Galaxy on WhatsApp."
         items={page.faqs}
       />

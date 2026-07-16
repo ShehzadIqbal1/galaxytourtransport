@@ -57,5 +57,16 @@ describe("schema generators", () => {
     const service = buildServiceSchema(route);
     expect(service["@type"]).toBe("Service");
     expect(service.url).toContain("/routes/dubai-to-abu-dhabi");
+
+    const landingService = buildServiceSchema({
+      h1: "Car Lift Service from Dubai to Abu Dhabi",
+      description: "Landing desc",
+      path: "/dubai-to-abu-dhabi-car-lift",
+      serviceType: "Car Lift / Passenger Transportation",
+    });
+    expect(landingService.url).toContain("/dubai-to-abu-dhabi-car-lift");
+    expect(landingService.serviceType).toBe(
+      "Car Lift / Passenger Transportation",
+    );
   });
 });

@@ -8,9 +8,9 @@ export const serviceLandings: ServiceLandingPage[] = [
   {
     id: "dubai-to-abu-dhabi-car-lift",
     path: "/dubai-to-abu-dhabi-car-lift",
-    title: "Car Lift Dubai to Abu Dhabi | Galaxy Transport",
+    title: "Car Lift Dubai to Abu Dhabi | Galaxy Transport UAE",
     description:
-      "Book a licensed car lift Dubai to Abu Dhabi — shared seat or private chauffeur. Clear WhatsApp fares, door-to-door pickup. Message Galaxy now.",
+      "Book a licensed car lift Dubai to Abu Dhabi — shared seat or private chauffeur. Clear WhatsApp fares, door-to-door pickup. Message Galaxy now to reserve.",
     keywords: [
       "Car lift Dubai to Abu Dhabi",
       "Car lift UAE",
@@ -112,9 +112,9 @@ export const serviceLandings: ServiceLandingPage[] = [
   {
     id: "abu-dhabi-to-dubai-car-lift",
     path: "/abu-dhabi-to-dubai-car-lift",
-    title: "Car Lift Abu Dhabi to Dubai | Galaxy Transport",
+    title: "Car Lift Abu Dhabi to Dubai | Galaxy Transport UAE",
     description:
-      "Licensed car lift Abu Dhabi to Dubai for weekday commuting and weekend trips. Shared or private chauffeur, WhatsApp booking. Reserve your seat today.",
+      "Licensed car lift Abu Dhabi to Dubai for weekday commuting and weekend trips. Shared or private chauffeur, WhatsApp booking. Reserve your seat with Galaxy today.",
     keywords: [
       "Car lift Abu Dhabi to Dubai",
       "Car lift UAE",
@@ -216,9 +216,9 @@ export const serviceLandings: ServiceLandingPage[] = [
   {
     id: "dubai-airport-transfer",
     path: "/dubai-airport-transfer",
-    title: "Dubai Airport Pick & Drop | Galaxy Transfers",
+    title: "Dubai Airport Pick & Drop | Galaxy Transfers UAE",
     description:
-      "Dubai Airport pick and drop for DXB and DWC — flight-tracked meet-and-greet, licensed chauffeurs, fixed WhatsApp fares. Book your transfer now.",
+      "Dubai Airport pick and drop for DXB and DWC — flight-tracked meet-and-greet, licensed chauffeurs, fixed WhatsApp fares. Book your UAE transfer now.",
     keywords: [
       "Dubai Airport pick and drop",
       "UAE airport transportation services",
@@ -320,9 +320,9 @@ export const serviceLandings: ServiceLandingPage[] = [
   {
     id: "abu-dhabi-airport-transfer",
     path: "/abu-dhabi-airport-transfer",
-    title: "Abu Dhabi Airport Pick & Drop | Galaxy",
+    title: "Abu Dhabi Airport Pick & Drop | Galaxy Transport",
     description:
-      "Abu Dhabi airport pick and drop with licensed chauffeurs, flight tracking, and fixed WhatsApp quotes. AUH meet-and-greet across the UAE. Book now.",
+      "Abu Dhabi airport pick and drop with licensed chauffeurs, flight tracking, and fixed WhatsApp quotes. AUH meet-and-greet across the UAE — book now.",
     keywords: [
       "Abu Dhabi airport pick and drop",
       "UAE airport transportation services",
@@ -426,7 +426,7 @@ export const serviceLandings: ServiceLandingPage[] = [
     path: "/private-taxi-dubai",
     title: "Private Taxi Dubai | Affordable Chauffeur UAE",
     description:
-      "Book a private taxi Dubai with licensed chauffeurs — city hops, airport runs, and inter-emirate lifts. Affordable chauffeur services in UAE via WhatsApp.",
+      "Book a private taxi Dubai with licensed chauffeurs — city hops, airport runs, and inter-emirate lifts. Affordable chauffeur services in UAE via WhatsApp today.",
     keywords: [
       "Private taxi Dubai",
       "Affordable chauffeur services in UAE",

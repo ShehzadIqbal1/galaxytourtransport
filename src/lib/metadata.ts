@@ -59,7 +59,7 @@ export function buildHomeMetadata(): Metadata {
   return buildPageMetadata({
     title: "Car Lift UAE | Affordable Dubai to Abu Dhabi Transfers",
     description:
-      "Reliable, affordable car lift and airport transfer service across UAE. Dubai to Abu Dhabi private taxi, airport pick & drop. Book now.",
+      "Reliable, affordable car lift and airport transfer service across UAE. Dubai to Abu Dhabi private taxi, airport pick & drop. Book on WhatsApp now.",
     path: "/",
     keywords: [...siteConfig.keywordsByPage.home],
     ogImage: siteConfig.defaultOgImage,

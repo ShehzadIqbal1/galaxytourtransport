@@ -23,6 +23,201 @@ export const blogCta: CtaContent = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "dubai-abu-dhabi-car-lift-cost",
+    title: "How much does a car lift from Dubai to Abu Dhabi cost?",
+    description:
+      "What drives car lift Dubai to Abu Dhabi pricing — shared vs private, vehicle class, peak hours, and how to get a fixed WhatsApp quote before you ride.",
+    publishedAt: "2026-07-10",
+    keywords: [
+      "Car lift Dubai to Abu Dhabi",
+      "Car lift UAE",
+      "UAE affordable transportation services",
+      "Affordable chauffeur services in UAE",
+    ],
+    relatedRouteSlugs: ["dubai-to-abu-dhabi", "abu-dhabi-to-dubai"],
+    heroImage: "/images/blog/dubai-abu-dhabi.jpg",
+    heroImageAlt: "Highway view for Dubai to Abu Dhabi car lift cost planning",
+    readingTimeMinutes: 6,
+    body: `## What shapes the fare
+
+A **car lift Dubai to Abu Dhabi** quote depends on shared seat vs private vehicle, sedan vs SUV, pickup zone in Dubai, and whether you continue to AUH. Galaxy locks the number on WhatsApp before you ride — that is how **UAE affordable transportation services** stay predictable.
+
+## Shared seat vs private cabin
+
+Shared seats cost less per person when you can align with a window. Private cabins cost more but suit luggage, families, or hard meeting times in Abu Dhabi.
+
+## Peak windows that move price pressure
+
+Friday evenings, holiday weekends, and fog mornings tighten supply. Message early if you need a guaranteed private car on those days.
+
+## How to get an accurate quote
+
+Send pickup neighbourhood, preferred hour, passenger count, and bags. Ask whether Salik/tolls and waiting are included. Compare that clarity with informal roadside offers before you book.
+
+## Book the corridor
+
+- [Car lift Dubai to Abu Dhabi](/dubai-to-abu-dhabi-car-lift)
+- [Car lift Abu Dhabi to Dubai](/abu-dhabi-to-dubai-car-lift)
+`,
+  },
+  {
+    slug: "dubai-airport-to-abu-dhabi",
+    title: "Best way to get from Dubai Airport to Abu Dhabi",
+    description:
+      "Compare Dubai Airport pick and drop options to Abu Dhabi — private chauffeur, car lift timing, luggage tips, and when a licensed transfer beats public options.",
+    publishedAt: "2026-07-12",
+    keywords: [
+      "Dubai Airport pick and drop",
+      "Car lift Dubai to Abu Dhabi",
+      "UAE airport transportation services",
+      "Private taxi Dubai",
+    ],
+    relatedRouteSlugs: ["uae-airport-shuttle", "dubai-to-abu-dhabi"],
+    heroImage: "/images/blog/uae-airport.jpg",
+    heroImageAlt: "Dubai Airport arrivals curb for transfer onward to Abu Dhabi",
+    readingTimeMinutes: 7,
+    body: `## Land at DXB, continue to the capital
+
+After a long flight, the best way from Dubai Airport to Abu Dhabi is usually a licensed private transfer with flight tracking — not a last-minute kerbside scramble. Galaxy combines **Dubai Airport pick and drop** with an onward private run toward Corniche, Yas, or AUH.
+
+## Why private often wins after landing
+
+- Bags and jet lag favour a single cabin
+- Flight delays are handled in the same WhatsApp thread
+- Families avoid splitting across public options late at night
+
+## When a corridor car lift still works
+
+If you land with light luggage and can wait for a shared window, a **car lift Dubai to Abu Dhabi** seat can be the leaner **UAE airport transportation services** choice. Say so when you book so we match the format.
+
+## What to send before you fly
+
+Flight number, terminal, passenger count, and Abu Dhabi drop. Galaxy confirms meet point, vehicle class, and fare before you leave home.
+
+## Related pages
+
+- [Dubai Airport pick and drop](/dubai-airport-transfer)
+- [Car lift Dubai to Abu Dhabi](/dubai-to-abu-dhabi-car-lift)
+- [Abu Dhabi airport pick and drop](/abu-dhabi-airport-transfer)
+`,
+  },
+  {
+    slug: "private-taxi-vs-public-transport-uae",
+    title: "Private taxi vs public transport in the UAE",
+    description:
+      "Private taxi Dubai and car lift UAE compared with metro, bus, and intercity coaches — when a chauffeur is worth it for airports, luggage, and Dubai–Abu Dhabi trips.",
+    publishedAt: "2026-07-14",
+    keywords: [
+      "Private taxi Dubai",
+      "Car lift UAE",
+      "Car lift Dubai",
+      "Affordable chauffeur services in UAE",
+    ],
+    relatedRouteSlugs: ["dubai-to-abu-dhabi", "uae-airport-shuttle"],
+    heroImage: "/images/blog/private-taxi.jpg",
+    heroImageAlt: "Private taxi Dubai sedan compared with public transport options",
+    readingTimeMinutes: 7,
+    body: `## Two jobs, different tools
+
+Public transport shines for light city hops with time to spare. A **private taxi Dubai** or inter-emirate **car lift UAE** shines when luggage, timing, or door-to-door drop matters — especially between Dubai and Abu Dhabi.
+
+## Where public transport wins
+
+- Solo travellers with a day pass mindset
+- Hotel-to-mall hops near metro stations
+- Budget sightseeing without bags
+
+## Where private taxi / car lift wins
+
+- DXB or AUH arrivals with suitcases
+- Client meetings with mid-route stops
+- Night transfers and family groups
+- Predictable **affordable chauffeur services in UAE** quoted before departure
+
+## Hybrid approach many guests use
+
+Metro or taxi inside Dubai for daytime errands, then a Galaxy private cabin or shared lift for the capital corridor. Book both intents on one WhatsApp thread if timing is tight.
+
+## Related services
+
+- [Private taxi Dubai](/private-taxi-dubai)
+- [Car lift Dubai to Abu Dhabi](/dubai-to-abu-dhabi-car-lift)
+- [Dubai Airport pick and drop](/dubai-airport-transfer)
+`,
+  },
+  {
+    slug: "abu-dhabi-airport-pick-and-drop-guide",
+    title: "Abu Dhabi airport pick and drop: what to expect at AUH",
+    description:
+      "A practical AUH guide to Abu Dhabi airport pick and drop — meet points, flight tracking, luggage, and continuing to Dubai with a licensed chauffeur.",
+    publishedAt: "2026-07-15",
+    keywords: [
+      "Abu Dhabi airport pick and drop",
+      "UAE airport transportation services",
+      "Car lift Abu Dhabi to Dubai",
+      "Car lift UAE",
+    ],
+    relatedRouteSlugs: ["uae-airport-shuttle", "abu-dhabi-to-dubai"],
+    heroImage: "/images/blog/uae-airport.jpg",
+    heroImageAlt: "AUH arrivals for Abu Dhabi airport pick and drop service",
+    readingTimeMinutes: 6,
+    body: `## AUH without the guesswork
+
+**Abu Dhabi airport pick and drop** should feel simple: flight tracked, meet point shared, vehicle ready. Galaxy’s WhatsApp confirmation includes plate and chauffeur details before you land at AUH.
+
+## After immigration
+
+Keep WhatsApp open. If bags take longer than expected, a short message keeps the driver aligned within the agreed buffer — standard for serious **UAE airport transportation services**.
+
+## Continuing to Dubai
+
+Many travellers land in Abu Dhabi and need Downtown, Marina, or DXB next. Ask for a private continuation or a **car lift Abu Dhabi to Dubai** when you book the airport leg.
+
+## Related pages
+
+- [Abu Dhabi airport pick and drop](/abu-dhabi-airport-transfer)
+- [Car lift Abu Dhabi to Dubai](/abu-dhabi-to-dubai-car-lift)
+- [Dubai Airport pick and drop](/dubai-airport-transfer)
+`,
+  },
+  {
+    slug: "affordable-private-taxi-dubai-tips",
+    title: "Affordable private taxi Dubai: how to book without surge surprises",
+    description:
+      "Tips for affordable chauffeur services in UAE and private taxi Dubai bookings — fixed WhatsApp quotes, vehicle class, and when shared car lift is the smarter save.",
+    publishedAt: "2026-07-16",
+    keywords: [
+      "Private taxi Dubai",
+      "Affordable chauffeur services in UAE",
+      "Car lift Dubai",
+      "UAE affordable transportation services",
+    ],
+    relatedRouteSlugs: ["dubai-to-abu-dhabi", "uae-airport-shuttle"],
+    heroImage: "/images/blog/chauffeur.jpg",
+    heroImageAlt: "Affordable private taxi Dubai chauffeur vehicle ready for booking",
+    readingTimeMinutes: 5,
+    body: `## Affordable still means licensed
+
+Searching **private taxi Dubai** or **affordable chauffeur services in UAE** should lead to a clear quote, not a surprise meter. Galaxy confirms vehicle class and fare on WhatsApp before dispatch.
+
+## Three questions that protect your budget
+
+1. Is this a short Dubai hop or an inter-emirate **car lift Dubai** run?
+2. Are tolls and waiting included?
+3. Would a shared seat on a busy corridor save more than a full private cabin?
+
+## When shared beats private
+
+Solo light travel on Dubai–Abu Dhabi or Dubai–Sharjah often favours a shared lift. Keep private for airports, families, and timed meetings.
+
+## Related pages
+
+- [Private taxi Dubai](/private-taxi-dubai)
+- [Car lift Dubai to Abu Dhabi](/dubai-to-abu-dhabi-car-lift)
+- [All services](/services)
+`,
+  },
+  {
     slug: "dubai-abu-dhabi-car-lift-guide",
     title: "Dubai to Abu Dhabi car lift: timing, seats, and what to expect",
     description:
@@ -60,8 +255,8 @@ Include pickup neighbourhood, preferred departure hour, passenger count, and bag
 
 ## Related routes
 
-- [Dubai to Abu Dhabi](/routes/dubai-to-abu-dhabi)
-- [Abu Dhabi to Dubai](/routes/abu-dhabi-to-dubai)
+- [Car lift Dubai to Abu Dhabi](/dubai-to-abu-dhabi-car-lift)
+- [Car lift Abu Dhabi to Dubai](/abu-dhabi-to-dubai-car-lift)
 `,
   },
   {
@@ -100,9 +295,10 @@ Seven-seat SUVs handle family loads; sedans suit light business travel. Mention 
 
 Keep WhatsApp open until you are seated. If immigration takes longer than expected, a short message keeps the driver aligned without guesswork.
 
-## Related route
+## Related routes
 
-- [UAE Airport Shuttle](/routes/uae-airport-shuttle)
+- [Dubai Airport pick and drop](/dubai-airport-transfer)
+- [Abu Dhabi airport pick and drop](/abu-dhabi-airport-transfer)
 `,
   },
   {
@@ -187,8 +383,9 @@ Galaxy covers both patterns: private chauffeur for exclusive runs, and shared li
 
 ## Related reading and routes
 
-- [Dubai to Abu Dhabi](/routes/dubai-to-abu-dhabi)
-- [UAE Airport Shuttle](/routes/uae-airport-shuttle)
+- [Car lift Dubai to Abu Dhabi](/dubai-to-abu-dhabi-car-lift)
+- [Private taxi Dubai](/private-taxi-dubai)
+- [Dubai Airport pick and drop](/dubai-airport-transfer)
 `,
   },
   {
@@ -227,8 +424,8 @@ National Day weekends, Formula-related traffic, and winter fog change E11 timing
 
 ## Related routes
 
-- [Abu Dhabi to Dubai](/routes/abu-dhabi-to-dubai)
-- [Dubai to Abu Dhabi](/routes/dubai-to-abu-dhabi)
+- [Car lift Abu Dhabi to Dubai](/abu-dhabi-to-dubai-car-lift)
+- [Car lift Dubai to Abu Dhabi](/dubai-to-abu-dhabi-car-lift)
 `,
   },
   {
@@ -309,8 +506,9 @@ Airport meet-and-greet, board meetings on both sides of E11, family hotel moves,
 
 ## Related routes
 
-- [Dubai to Abu Dhabi](/routes/dubai-to-abu-dhabi)
-- [UAE Airport Shuttle](/routes/uae-airport-shuttle)
+- [Car lift Dubai to Abu Dhabi](/dubai-to-abu-dhabi-car-lift)
+- [Private taxi Dubai](/private-taxi-dubai)
+- [Dubai Airport pick and drop](/dubai-airport-transfer)
 `,
   },
   {
@@ -387,8 +585,8 @@ Shared keeps cost lean for solo light travel. Private wins for teams, hybrid wor
 ## Related routes
 
 - [Dubai to Sharjah](/routes/dubai-to-sharjah)
-- [Dubai to Abu Dhabi](/routes/dubai-to-abu-dhabi)
-- [Abu Dhabi to Dubai](/routes/abu-dhabi-to-dubai)
+- [Car lift Dubai to Abu Dhabi](/dubai-to-abu-dhabi-car-lift)
+- [Car lift Abu Dhabi to Dubai](/abu-dhabi-to-dubai-car-lift)
 `,
   },
 ];

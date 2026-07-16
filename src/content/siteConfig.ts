@@ -38,7 +38,7 @@ export const siteConfig = {
   locale: "en_AE",
   defaultLocale: "en",
   description:
-    "Reliable, affordable car lift and airport transfer service across UAE. Dubai to Abu Dhabi private taxi, airport pick & drop. Book now.",
+    "Reliable, affordable car lift and airport transfer service across UAE. Dubai to Abu Dhabi private taxi, airport pick & drop. Book on WhatsApp now.",
   phoneDisplay: "+971 50 559 7803",
   phoneHref: "tel:+971505597803",
   email: "info@galaxytourtransport.com",
@@ -110,11 +110,6 @@ export const siteConfig = {
           id: "route-auh-airport",
           label: "Abu Dhabi Airport Transfer",
           href: "/abu-dhabi-airport-transfer",
-        },
-        {
-          id: "route-private-taxi",
-          label: "Private Taxi Dubai",
-          href: "/private-taxi-dubai",
         },
       ],
     },

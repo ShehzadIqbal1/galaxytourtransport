@@ -1,65 +1,127 @@
-import Image from "next/image";
+import dynamic from "next/dynamic";
+import { AllRoutesCovered } from "@/components/sections/AllRoutesCovered";
+import { CostComparison } from "@/components/sections/CostComparison";
+import { CTABand } from "@/components/sections/CTABand";
+import { FleetShowcase } from "@/components/sections/FleetShowcase";
+import { Hero } from "@/components/sections/Hero";
+import { LegalComparison } from "@/components/sections/LegalComparison";
+import { MapBand } from "@/components/sections/MapBand";
+import { ProcessSteps } from "@/components/sections/ProcessSteps";
+import { ServiceExplainer } from "@/components/sections/ServiceExplainer";
+import { TrustBar } from "@/components/sections/TrustBar";
+import { TrustSection } from "@/components/sections/TrustSection";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { getCoveredCorridorRoutes } from "@/content/coveredCorridors";
+import { faqItems } from "@/content/faq";
+import { getFleetByCategory } from "@/content/fleet";
+import { serviceFormats } from "@/content/formats";
+import {
+  costComparisons,
+  explainerContent,
+  explainerFeatures,
+  fleetSection,
+  formatsSection,
+  heroContent,
+  heroStats,
+  homeCta,
+  legalColumns,
+  processSteps,
+  trustSection,
+} from "@/content/home";
+import { siteConfig } from "@/content/siteConfig";
+import { trustBarItems } from "@/content/trust";
+import { buildHomeMetadata } from "@/lib/metadata";
+import {
+  buildFaqPageSchema,
+  buildLocalBusinessSchema,
+} from "@/lib/schema";
 
-export default function Home() {
+const ServiceFormats = dynamic(
+  () =>
+    import("@/components/sections/ServiceFormats").then(
+      (mod) => mod.ServiceFormats,
+    ),
+  { ssr: true },
+);
+
+const FAQSection = dynamic(
+  () =>
+    import("@/components/sections/FAQSection").then((mod) => mod.FAQSection),
+  { ssr: true },
+);
+
+export const metadata = buildHomeMetadata();
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <JsonLd
+        data={[buildLocalBusinessSchema(), buildFaqPageSchema(faqItems)]}
+      />
+      <Hero
+        eyebrow={heroContent.eyebrow}
+        headlineBefore={heroContent.headlineBefore}
+        headlineHighlight={heroContent.headlineHighlight}
+        headlineAfter={heroContent.headlineAfter}
+        subcopy={heroContent.subcopy}
+        primaryCta={heroContent.primaryCta}
+        secondaryCta={heroContent.secondaryCta}
+        secondaryHref={siteConfig.phoneHref}
+        whatsappMessage={heroContent.whatsappMessage}
+        stats={heroStats}
+        imageSrc="/images/hero/hero.webp"
+        imageAlt={siteConfig.defaultOgImageAlt}
+      />
+      <TrustBar items={trustBarItems} />
+      <ServiceExplainer
+        eyebrow={explainerContent.eyebrow}
+        title={explainerContent.title}
+        description={explainerContent.description}
+        features={explainerFeatures}
+      />
+      <CostComparison
+        eyebrow="Value clarity"
+        title="Shared, private, or informal — know the trade-offs"
+        description="Compare seat-based car lifts, licensed private chauffeurs, and the risks of unlicensed roadside offers."
+        comparisons={costComparisons}
+      />
+      <ServiceFormats
+        eyebrow={formatsSection.eyebrow}
+        title={formatsSection.title}
+        description={formatsSection.description}
+        formats={serviceFormats}
+      />
+      <FleetShowcase
+        eyebrow={fleetSection.eyebrow}
+        title={fleetSection.title}
+        description={fleetSection.description}
+        groups={getFleetByCategory()}
+      />
+      <AllRoutesCovered corridors={getCoveredCorridorRoutes()} />
+      <TrustSection content={trustSection} />
+      <ProcessSteps
+        eyebrow="Booking flow"
+        title="Three steps from chat to curb"
+        description="No app installs — just a clear WhatsApp thread from enquiry to pickup."
+        steps={processSteps}
+      />
+      <LegalComparison
+        eyebrow="Licensing matters"
+        title="Documented journeys vs informal pickups"
+        description="A licensed operator leaves a paper trail; informal rides rarely do."
+        columns={legalColumns}
+      />
+      <FAQSection
+        eyebrow="FAQ"
+        title="Answers before you message"
+        description="Quick clarity on booking, airports, ladies-preferred chauffeurs, and monthly plans."
+        items={faqItems}
+      />
+      <CTABand
+        content={{ ...homeCta, secondaryLabel: "Contact Us" }}
+        secondaryHref="/contact"
+      />
+      <MapBand />
+    </>
   );
 }

@@ -1,0 +1,30 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Galaxy Tour &amp; Transport">
+  <defs>
+    <linearGradient id="ogGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C577"/>
+      <stop offset="55%" stop-color="#C6A15B"/>
+      <stop offset="100%" stop-color="#A8843E"/>
+    </linearGradient>
+    <linearGradient id="ogSilver" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F7F3EA" stop-opacity="0.55"/>
+      <stop offset="40%" stop-color="#EBE3D2"/>
+      <stop offset="100%" stop-color="#C8C0B0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0B0B0C"/>
+  <rect x="28" y="28" width="1144" height="574" fill="none" stroke="#C6A15B" stroke-width="2" opacity="0.35"/>
+
+  <g transform="translate(520 145) scale(2.1)">
+    <circle cx="80" cy="80" r="78" fill="#14110E"/>
+    <circle cx="80" cy="80" r="74" fill="none" stroke="#C6A15B" stroke-width="1.5" opacity="0.35"/>
+    <path fill="none" stroke="url(#ogSilver)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" d="M28 78C34 58 48 46 68 42C86 38 104 42 118 52C128 59 134 70 136 84C138 98 132 112 118 120C104 128 88 126 78 118"/>
+    <path fill="none" stroke="url(#ogSilver)" stroke-width="2" stroke-linecap="round" opacity="0.45" d="M36 102C52 108 70 110 92 106"/>
+    <g transform="translate(80 78) skewX(-12) translate(-80 -78)">
+      <text x="80" y="90" text-anchor="middle" fill="url(#ogGold)" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="58" font-weight="900" letter-spacing="-2">GT</text>
+    </g>
+    <text x="80" y="128" text-anchor="middle" fill="#C6A15B" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic">Tour &amp; Transport</text>
+  </g>
+
+  <text x="600" y="545" text-anchor="middle" fill="#F7F3EA" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="600">Galaxy Tour &amp; Transport</text>
+  <text x="600" y="580" text-anchor="middle" fill="#C6A15B" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="4" font-weight="600">TOURS · TRANSFERS · UAE</text>
+</svg>

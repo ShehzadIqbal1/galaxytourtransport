@@ -1,26 +1,292 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Overridable stacks — Font lab updates these on <html> */
+html {
+  --font-display-family: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-onyx: #0b0b0c;
+  --color-charcoal: #14110e;
+  --color-charcoal2: #1c1813;
+  --color-gold: #c6a15b;
+  --color-gold-bright: #e8c577;
+  --color-sand: #ebe3d2;
+  --color-ivory: #f7f3ea;
+  --color-paper: #fffcf7;
+  --color-ink: #1a1612;
+  --color-ink-muted: #5c5348;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1ebe57;
+
+  --font-display: var(--font-display-family);
+  --font-sans: var(--font-sans-family);
+
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --shadow-card: 0 10px 30px rgb(11 11 12 / 0.08);
+  --shadow-card-hover: 0 18px 40px rgb(11 11 12 / 0.14);
+  --shadow-soft: 0 4px 18px rgb(11 11 12 / 0.06);
+
+  --container-content: 1180px;
+  --container-prose: 720px;
+
+  --transition-default: 220ms ease;
+  --transition-slow: 320ms ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans-family);
+    overflow-x: hidden;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-bright);
+    outline-offset: 3px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display-family);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    font-synthesis: none;
+  }
+
+  a {
+    color: inherit;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility container-content {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-content);
+  padding-inline: 1rem;
+}
+
+@utility container-prose {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-prose);
+  padding-inline: 1rem;
+}
+
+@utility section-padding {
+  padding-block: 3.5rem;
+}
+
+@media (min-width: 640px) {
+  .container-content,
+  .container-prose {
+    padding-inline: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-block: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-block: 6.5rem;
+  }
+}
+
+@utility transition-default {
+  transition: all var(--transition-default);
+}
+
+@utility transition-slow {
+  transition: all var(--transition-slow);
+}
+
+@utility sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@utility font-display {
+  font-family: var(--font-display-family);
+}
+
+@utility card-motion {
+  transition:
+    transform var(--transition-default),
+    border-color var(--transition-default),
+    box-shadow var(--transition-default);
+}
+
+.card-motion:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes whatsapp-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(37 211 102 / 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgb(37 211 102 / 0);
+  }
+}
+
+@keyframes live-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  75%,
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes progress-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes route-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes route-dot {
+  from {
+    left: 0%;
+  }
+  to {
+    left: calc(100% - 0.5rem);
+  }
+}
+
+@keyframes route-zigzag-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes trust-marquee-ltr {
+  from {
+    transform: translateX(-33.333%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.trust-marquee {
+  animation: trust-marquee-ltr 28s linear infinite;
+}
+
+.trust-marquee:hover {
+  animation-play-state: paused;
+}
+
+@utility animate-hero-zoom {
+  animation: hero-zoom 1.25s ease-out both;
+}
+
+@utility animate-whatsapp-pulse {
+  animation: whatsapp-pulse 2.2s ease-out infinite;
+}
+
+@utility animate-live-ping {
+  animation: live-ping 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@utility animate-progress-line {
+  animation: progress-line 3.2s linear both;
+  transform-origin: left;
+}
+
+@utility animate-route-draw {
+  animation: route-draw 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: left;
+}
+
+@utility animate-route-dot {
+  animation: route-dot 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility animate-route-zigzag-draw {
+  animation: route-zigzag-draw 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .card-motion:hover {
+    transform: none;
+  }
+
+  .animate-hero-zoom,
+  .animate-whatsapp-pulse,
+  .animate-live-ping,
+  .animate-progress-line,
+  .animate-route-draw,
+  .animate-route-dot,
+  .animate-route-zigzag-draw,
+  .trust-marquee {
+    animation: none;
+  }
+
+  .animate-route-draw {
+    transform: scaleX(1);
+  }
+
+  .animate-route-dot {
+    left: calc(100% - 0.5rem);
+  }
+
+  .animate-route-zigzag-draw {
+    stroke-dashoffset: 0;
+  }
 }

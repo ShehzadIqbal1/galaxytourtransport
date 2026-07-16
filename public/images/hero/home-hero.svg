@@ -1,0 +1,32 @@
+﻿<svg xmlns=""http://www.w3.org/2000/svg"" width=""1200"" height=""900"" viewBox=""0 0 1200 900"" role=""img"" aria-label=""Galaxy chauffeur on UAE highway at dusk"">
+  <defs>
+    <linearGradient id=""sky"" x1=""0"" y1=""0"" x2=""0"" y2=""1"">
+      <stop offset=""0%"" stop-color=""#1a1410""/>
+      <stop offset=""55%"" stop-color=""#3a2a18""/>
+      <stop offset=""100%"" stop-color=""#c6a15b""/>
+    </linearGradient>
+    <linearGradient id=""road"" x1=""0"" y1=""0"" x2=""0"" y2=""1"">
+      <stop offset=""0%"" stop-color=""#2a2520""/>
+      <stop offset=""100%"" stop-color=""#0b0b0c""/>
+    </linearGradient>
+  </defs>
+  <rect width=""1200"" height=""900"" fill=""url(#sky)""/>
+  <rect x=""0"" y=""520"" width=""1200"" height=""380"" fill=""url(#road)""/>
+  <g fill=""#0b0b0c"" opacity=""0.55"">
+    <rect x=""780"" y=""220"" width=""48"" height=""300""/>
+    <rect x=""860"" y=""160"" width=""70"" height=""360""/>
+    <rect x=""960"" y=""200"" width=""40"" height=""320""/>
+    <rect x=""1020"" y=""120"" width=""90"" height=""400""/>
+    <polygon points=""1060,120 1105,40 1150,120""/>
+  </g>
+  <g fill=""#17140f"" stroke=""#c6a15b"" stroke-width=""3"">
+    <path d=""M180 620 h520 c40 0 70 20 80 50 l30 90 h-700 l20-90 c10-30 30-50 50-50z""/>
+    <rect x=""250"" y=""545"" width=""160"" height=""85"" rx=""12""/>
+    <rect x=""440"" y=""545"" width=""180"" height=""85"" rx=""12""/>
+    <circle cx=""300"" cy=""760"" r=""48"" fill=""#0b0b0c""/>
+    <circle cx=""620"" cy=""760"" r=""48"" fill=""#0b0b0c""/>
+    <circle cx=""300"" cy=""760"" r=""28"" fill=""#c6a15b"" opacity=""0.35""/>
+    <circle cx=""620"" cy=""760"" r=""28"" fill=""#c6a15b"" opacity=""0.35""/>
+  </g>
+  <text x=""60"" y=""80"" fill=""#e7dec7"" font-family=""Georgia, serif"" font-size=""36"">Galaxy UAE Journeys</text>
+</svg>

@@ -1,0 +1,5 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Shared Lift">
+  <rect width="800" height="500" fill="#211C15"/>
+  <rect x="24" y="24" width="752" height="452" fill="none" stroke="#C6A15B" stroke-width="2" opacity="0.5"/>
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#E7DEC7" font-family="Georgia, serif" font-size="28">Shared Lift</text>
+</svg>

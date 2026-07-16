@@ -38,7 +38,7 @@ export const siteConfig = {
   locale: "en_AE",
   defaultLocale: "en",
   description:
-    "Licensed UAE tours and chauffeur transport desert safaris, city itineraries, car lifts, and airport transfers booked on WhatsApp.",
+    "Reliable, affordable car lift and airport transfer service across UAE. Dubai to Abu Dhabi private taxi, airport pick & drop. Book now.",
   phoneDisplay: "+971 50 559 7803",
   phoneHref: "tel:+971505597803",
   email: "info@galaxytourtransport.com",
@@ -49,13 +49,16 @@ export const siteConfig = {
     addressCountry: "AE",
   },
   mapsUrl: "https://maps.app.goo.gl/cG6aT2HEtcAfESk28",
+  /** Google Maps embed (no API key required) for Business Bay, Dubai */
+  mapsEmbedUrl:
+    "https://www.google.com/maps?q=Business+Bay,+Dubai,+United+Arab+Emirates&output=embed",
   serviceArea: "United Arab Emirates",
   whatsappNumber,
   gaId: gaIdRaw ? gaIdRaw : undefined,
   googleMapsApiKey: mapsKeyRaw ? mapsKeyRaw : undefined,
   defaultOgImage: "/images/hero/og-default.svg",
   defaultOgImageAlt:
-    "Galaxy Tour & Transport — desert and city journeys across the UAE",
+    "Affordable chauffeur car lift UAE — Dubai to Abu Dhabi private transfers",
   logo: "/images/brand/logo-mark.svg",
   logoPng: "/images/brand/logo-mark.png",
   serviceTags: [
@@ -68,10 +71,12 @@ export const siteConfig = {
       "Car lift UAE",
       "Car lift Dubai",
       "Affordable chauffeur services in UAE",
+      "UAE affordable transportation services",
     ],
     transport: [
       "Private taxi Dubai",
       "UAE affordable transportation services",
+      "Car lift Dubai",
     ],
     airportTransfers: [
       "Dubai Airport pick and drop",
@@ -89,12 +94,27 @@ export const siteConfig = {
         {
           id: "route-dxb-auh",
           label: "Car Lift Dubai to Abu Dhabi",
-          href: "/routes/dubai-to-abu-dhabi",
+          href: "/dubai-to-abu-dhabi-car-lift",
         },
         {
           id: "route-auh-dxb",
           label: "Car Lift Abu Dhabi to Dubai",
-          href: "/routes/abu-dhabi-to-dubai",
+          href: "/abu-dhabi-to-dubai-car-lift",
+        },
+        {
+          id: "route-dxb-airport",
+          label: "Dubai Airport Transfer",
+          href: "/dubai-airport-transfer",
+        },
+        {
+          id: "route-auh-airport",
+          label: "Abu Dhabi Airport Transfer",
+          href: "/abu-dhabi-airport-transfer",
+        },
+        {
+          id: "route-private-taxi",
+          label: "Private Taxi Dubai",
+          href: "/private-taxi-dubai",
         },
       ],
     },
@@ -111,15 +131,42 @@ export const siteConfig = {
     { id: "services", label: "Services", href: "/services" },
     { id: "tours", label: "Tours", href: "/tours" },
     { id: "transport", label: "Transport", href: "/transport" },
-    {
-      id: "airport",
-      label: "Airport transfers",
-      href: "/transport/airport-transfers",
-    },
     { id: "gallery", label: "Gallery", href: "/gallery" },
     { id: "about", label: "About", href: "/about" },
     { id: "contact", label: "Contact", href: "/contact" },
     { id: "blog", label: "Blog", href: "/blog" },
+  ] satisfies NavItem[],
+  footerServiceLinks: [
+    {
+      id: "seo-dxb-auh",
+      label: "Car lift Dubai to Abu Dhabi",
+      href: "/dubai-to-abu-dhabi-car-lift",
+    },
+    {
+      id: "seo-auh-dxb",
+      label: "Car lift Abu Dhabi to Dubai",
+      href: "/abu-dhabi-to-dubai-car-lift",
+    },
+    {
+      id: "seo-dxb-airport",
+      label: "Dubai Airport pick and drop",
+      href: "/dubai-airport-transfer",
+    },
+    {
+      id: "seo-auh-airport",
+      label: "Abu Dhabi airport pick and drop",
+      href: "/abu-dhabi-airport-transfer",
+    },
+    {
+      id: "seo-private-taxi",
+      label: "Private taxi Dubai",
+      href: "/private-taxi-dubai",
+    },
+    {
+      id: "seo-airport-overview",
+      label: "UAE airport transportation services",
+      href: "/transport/airport-transfers",
+    },
   ] satisfies NavItem[],
   social: [
     {

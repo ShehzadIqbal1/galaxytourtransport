@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Chip } from "@/components/ui/Chip";
 import { blogCta } from "@/content/blog";
 import { getRouteBySlug } from "@/content/routes";
+import { getRouteHref } from "@/content/serviceLandings";
 import type { BlogPost, BreadcrumbItem } from "@/lib/types";
 
 function renderInline(text: string): ReactNode[] {
@@ -170,7 +171,7 @@ export function BlogPostLayout({ post, breadcrumbs }: BlogPostProps) {
                       {relatedRoutes.map((route) => (
                         <li key={route.slug}>
                           <Link
-                            href={`/routes/${route.slug}`}
+                            href={getRouteHref(route.slug)}
                             className="block rounded-md border border-ivory/15 bg-charcoal2 px-3 py-2.5 text-sm text-ivory/85 transition-default hover:border-gold/40 hover:text-gold-bright"
                           >
                             {route.title}

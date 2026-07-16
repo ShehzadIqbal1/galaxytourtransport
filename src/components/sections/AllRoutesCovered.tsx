@@ -6,6 +6,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Reveal } from "@/components/motion/Reveal";
 import { CtaButton } from "@/components/ui/CtaButton";
 import type { CoveredCorridor } from "@/content/coveredCorridors";
+import { getRouteHref } from "@/content/serviceLandings";
 import type { RouteDetail } from "@/lib/types";
 
 type CorridorItem = CoveredCorridor & { route: RouteDetail };
@@ -200,7 +201,7 @@ export function AllRoutesCovered({ corridors }: AllRoutesCoveredProps) {
                     </ul>
                     <div className="mt-6 space-y-3">
                       <CtaButton
-                        href={`/routes/${current.slug}`}
+                        href={getRouteHref(current.slug)}
                         variant="gold"
                         size="md"
                         className="w-full"

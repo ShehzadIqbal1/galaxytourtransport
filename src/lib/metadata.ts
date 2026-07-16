@@ -80,9 +80,9 @@ export function buildServiceLandingMetadata(
 
 export function buildTransportMetadata(): Metadata {
   return buildPageMetadata({
-    title: `Private Transfers & Car Lift | ${siteConfig.name}`,
+    title: "Private Taxi Dubai & Car Lift | Galaxy Transport",
     description:
-      "Book licensed private taxi, shared car lift, monthly commuter plans, and chauffeur transport across Dubai, Abu Dhabi, and the wider UAE.",
+      "Book private taxi Dubai, shared car lift, and affordable chauffeur services in UAE. WhatsApp quotes for Dubai, Abu Dhabi, and beyond.",
     path: "/transport",
     keywords: [...siteConfig.keywordsByPage.transport],
   });
@@ -90,9 +90,9 @@ export function buildTransportMetadata(): Metadata {
 
 export function buildAirportTransfersMetadata(): Metadata {
   return buildPageMetadata({
-    title: `Dubai & Abu Dhabi Airport Transfers | ${siteConfig.name}`,
+    title: "UAE Airport Transfers | DXB, DWC & AUH Pickup",
     description:
-      "Meet-and-greet airport pick and drop for DXB, DWC, AUH, and regional UAE airports with licensed chauffeurs and fixed WhatsApp booking.",
+      "UAE airport transportation services — Dubai Airport pick and drop plus Abu Dhabi airport pick and drop with flight tracking. Book on WhatsApp.",
     path: "/transport/airport-transfers",
     keywords: [...siteConfig.keywordsByPage.airportTransfers],
   });
@@ -100,9 +100,9 @@ export function buildAirportTransfersMetadata(): Metadata {
 
 export function buildToursMetadata(): Metadata {
   return buildPageMetadata({
-    title: `Desert Safaris, City Tours & Day Trips | ${siteConfig.name}`,
+    title: "UAE Desert Safari & City Tours | Galaxy Transport",
     description:
-      "Curated UAE tours — desert safari evenings, Dubai and Abu Dhabi city circuits, mountain day trips, and custom multi-day itineraries.",
+      "Curated UAE tours with transport included — Dubai desert safari, Abu Dhabi city circuits, mountain days, and custom itineraries. Book on WhatsApp.",
     path: "/tours",
     keywords: [
       "UAE desert safari",
@@ -125,9 +125,9 @@ export function buildRouteMetadata(route: RouteDetail): Metadata {
 
 export function buildBlogIndexMetadata(): Metadata {
   return buildPageMetadata({
-    title: `Travel Notes & Route Guides | ${siteConfig.name}`,
+    title: "UAE Car Lift & Airport Travel Guides | Galaxy",
     description:
-      "Practical UAE guides to car lifts, private chauffeurs, airport pickups, and tour transport from Galaxy Tour & Transport.",
+      "Guides on car lift Dubai to Abu Dhabi costs, airport transfers, private taxi vs public transport, and affordable chauffeur tips across the UAE.",
     path: "/blog",
     keywords: [
       "Car lift UAE",
@@ -152,9 +152,9 @@ export function buildBlogPostMetadata(post: BlogPost): Metadata {
 
 export function buildRoutesIndexMetadata(): Metadata {
   return buildPageMetadata({
-    title: `Popular Car Lift Routes Across the UAE | ${siteConfig.name}`,
+    title: "Popular Car Lift Routes UAE | Galaxy Transport",
     description:
-      "Browse Galaxy corridors — Dubai to Abu Dhabi, Sharjah, Ajman, Fujairah, Ras Al Khaimah, Umm Al Quwain, plus tours and airport shuttles.",
+      "Browse car lift UAE corridors — Dubai to Abu Dhabi, Sharjah, Ajman, Fujairah, RAK, plus airport shuttles. Book licensed seats on WhatsApp.",
     path: "/routes",
     keywords: [
       "Car lift UAE",
@@ -166,9 +166,9 @@ export function buildRoutesIndexMetadata(): Metadata {
 
 export function buildLocationsIndexMetadata(): Metadata {
   return buildPageMetadata({
-    title: `Service Locations Across the UAE | ${siteConfig.name}`,
+    title: "Car Lift Locations Across the UAE | Galaxy",
     description:
-      "Car lift and tour coverage in Dubai, Abu Dhabi, Sharjah, Ajman, Fujairah, Ras Al Khaimah, and Umm Al Quwain.",
+      "Service coverage in Dubai, Abu Dhabi, Sharjah, Ajman, Fujairah, Ras Al Khaimah, and UAQ — car lifts and affordable chauffeur services.",
     path: "/locations",
     keywords: ["Car lift UAE", "Car lift Dubai", "UAE affordable transportation services"],
   });
@@ -193,23 +193,24 @@ export function buildLocationMetadata(location: {
 
 export function buildServicesMetadata(): Metadata {
   return buildPageMetadata({
-    title: `Transport & Tour Services | ${siteConfig.name}`,
+    title: "UAE Car Lift & Chauffeur Services | Galaxy",
     description:
-      "Shared car lift, private transfers, monthly plans, airport pickups, and UAE tours — all booked on WhatsApp.",
+      "Overview of Galaxy services — car lift UAE, private taxi Dubai, airport pick and drop, monthly plans, and tours. Compare formats and book on WhatsApp.",
     path: "/services",
     keywords: [
       "UAE affordable transportation services",
       "Private taxi Dubai",
       "Affordable chauffeur services in UAE",
+      "Car lift UAE",
     ],
   });
 }
 
 export function buildGalleryMetadata(): Metadata {
   return buildPageMetadata({
-    title: `Fleet & Journey Gallery | ${siteConfig.name}`,
+    title: "Fleet Gallery | Galaxy Tour & Transport UAE",
     description:
-      "Explore Galaxy vehicles and journey visuals — sedans, SUVs, electric options, tours, and airport transfers.",
+      "See Galaxy sedans, SUVs, and chauffeur vehicles used for Dubai–Abu Dhabi car lifts, airport transfers, and UAE tour days.",
     path: "/gallery",
     keywords: ["Galaxy Tour & Transport fleet", "UAE chauffeur vehicles"],
   });
@@ -217,21 +218,21 @@ export function buildGalleryMetadata(): Metadata {
 
 export function buildAboutMetadata(): Metadata {
   return buildPageMetadata({
-    title: `About Galaxy Tour & Transport | ${siteConfig.name}`,
+    title: "About Galaxy | UAE Tours & Car Lift Operator",
     description:
-      "Learn how Galaxy pairs licensed UAE tours with chauffeur transport and WhatsApp-first booking.",
+      "Galaxy Tour & Transport is a licensed UAE operator for car lifts, private taxi Dubai rides, airport transfers, and curated tours booked on WhatsApp.",
     path: "/about",
-    keywords: ["Galaxy Tour & Transport", "UAE tours and transport"],
+    keywords: ["Galaxy Tour & Transport", "Car lift UAE", "Affordable chauffeur services in UAE"],
   });
 }
 
 export function buildContactMetadata(): Metadata {
   return buildPageMetadata({
-    title: `Contact & WhatsApp Booking | ${siteConfig.name}`,
+    title: "Contact Galaxy | WhatsApp Car Lift Booking UAE",
     description:
-      "Message Galaxy on WhatsApp for car lifts, private transfers, airport pickups, and UAE tour bookings.",
+      "Contact Galaxy in Business Bay, Dubai for car lift UAE quotes, airport pick and drop, and private taxi Dubai. Call, email, or WhatsApp to book.",
     path: "/contact",
-    keywords: ["Galaxy Tour & Transport contact", "WhatsApp car lift Dubai"],
+    keywords: ["Galaxy Tour & Transport contact", "WhatsApp car lift Dubai", "Car lift UAE"],
   });
 }
 

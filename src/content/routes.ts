@@ -19,7 +19,7 @@ export const routes: RouteDetail[] = [
     ],
     keywords: ["Car lift Dubai to Abu Dhabi"],
     heroImage: "/images/routes/dubai-to-abu-dhabi.jpg",
-    heroImageAlt: "Highway corridor from Dubai toward Abu Dhabi",
+    heroImageAlt: "Private car for Dubai to Abu Dhabi transfer on E11 corridor",
     flag: "Popular corridor",
   },
   {
@@ -40,7 +40,7 @@ export const routes: RouteDetail[] = [
     ],
     keywords: ["Car lift Abu Dhabi to Dubai"],
     heroImage: "/images/routes/abu-dhabi-to-dubai.jpg",
-    heroImageAlt: "Route from Abu Dhabi skyline toward Dubai",
+    heroImageAlt: "Private chauffeur car for Abu Dhabi to Dubai car lift",
     flag: "Commuter favourite",
   },
   {
@@ -204,7 +204,7 @@ export const routes: RouteDetail[] = [
       "UAE airport transportation services",
     ],
     heroImage: "/images/routes/uae-airport-shuttle.jpg",
-    heroImageAlt: "Airport transfer vehicle waiting at arrivals",
+    heroImageAlt: "Airport transfer vehicle for Dubai and Abu Dhabi pick and drop",
     flag: "Flight-synced",
   },
 ];

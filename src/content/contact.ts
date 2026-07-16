@@ -5,7 +5,12 @@ export const contactContent = {
   eyebrow: "Contact",
   title: "Tell us the corridor, tour, or flight",
   description:
-    "WhatsApp is the fastest way to confirm a Galaxy booking. Call or email if you prefer — we are based in Business Bay, Dubai.",
+    "WhatsApp is the fastest way to confirm a Galaxy booking for Dubai and Abu Dhabi corridors. Call or email if you prefer — we are based in Business Bay, Dubai.",
+  nap: {
+    name: "Galaxy Tour & Transport",
+    addressLine: "Business Bay, Dubai, UAE",
+    phoneDisplay: "+971 50 559 7803",
+  },
   channels: [
     {
       id: "whatsapp",
@@ -87,48 +92,48 @@ export const servicesPageContent = {
   eyebrow: "Services",
   title: "Everything Galaxy books on WhatsApp",
   description:
-    "Shared car lifts, private chauffeurs, monthly plans, airport transfers, and curated UAE tours — choose the format that fits your day.",
+    "Shared car lifts between Dubai and Abu Dhabi, private taxi Dubai rides, monthly plans, airport pick and drop, and curated UAE tours — choose the format that fits your day.",
   cards: [
     {
-      id: "svc-shared",
-      title: "Daily & Monthly Car Lift",
+      id: "svc-dxb-auh",
+      title: "Car Lift Dubai to Abu Dhabi",
       description:
-        "Seat-based inter-emirate travel on fixed corridors with daily or monthly packages.",
-      href: "/transport",
+        "Daily shared seats and private chauffeurs on the flagship Dubai–Abu Dhabi corridor.",
+      href: "/dubai-to-abu-dhabi-car-lift",
+    },
+    {
+      id: "svc-auh-dxb",
+      title: "Car Lift Abu Dhabi to Dubai",
+      description:
+        "Return and weekday commuting lifts from Abu Dhabi into Downtown, Marina, and DXB.",
+      href: "/abu-dhabi-to-dubai-car-lift",
+    },
+    {
+      id: "svc-dxb-airport",
+      title: "Dubai Airport Pick and Drop",
+      description:
+        "DXB and DWC meet-and-greet with flight tracking and luggage-ready vehicles.",
+      href: "/dubai-airport-transfer",
+    },
+    {
+      id: "svc-auh-airport",
+      title: "Abu Dhabi Airport Pick and Drop",
+      description:
+        "AUH arrivals transfers across Abu Dhabi, with optional continuation to Dubai.",
+      href: "/abu-dhabi-airport-transfer",
     },
     {
       id: "svc-private",
-      title: "Private & Shared Rides",
+      title: "Private Taxi Dubai",
       description:
-        "Choose exclusive vehicle comfort or economical shared seats — both licensed.",
-      href: "/transport",
-    },
-    {
-      id: "svc-airport",
-      title: "Airport Transfers",
-      description:
-        "DXB, DWC, and AUH pick and drop with flight tracking and meet-and-greet.",
-      href: "/transport/airport-transfers",
-    },
-    {
-      id: "svc-corporate",
-      title: "Staff & Corporate Transport",
-      description:
-        "Weekday office shuttles and client transfers with clear WhatsApp confirmations.",
-      href: "/transport",
-    },
-    {
-      id: "svc-tours",
-      title: "Tourist & City Tours",
-      description:
-        "Desert evenings, city circuits, mountain days, and custom multi-day itineraries.",
-      href: "/tours",
+        "Exclusive chauffeur cabin for city hops, client days, and affordable UAE chauffeur plans.",
+      href: "/private-taxi-dubai",
     },
     {
       id: "svc-help",
       title: "Not Sure Which Fits?",
       description:
-        "Tell us your route, schedule, and group size — we will recommend the right Galaxy format.",
+        "Tell us your Dubai or Abu Dhabi route, schedule, and group size — we will recommend the right Galaxy format.",
       href: "/contact",
     },
   ],

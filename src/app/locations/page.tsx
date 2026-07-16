@@ -103,21 +103,21 @@ export default function LocationsIndexPage() {
                 </span>
                 <h2 className="font-display text-xl text-ink">
                   <Link
-                    href="/routes/dubai-to-abu-dhabi"
+                    href="/dubai-to-abu-dhabi-car-lift"
                     className="transition-default hover:text-gold"
                   >
-                    Dubai to Abu Dhabi Route
+                    Car Lift Dubai to Abu Dhabi
                   </Link>
                 </h2>
                 <p className="mt-3 flex-1 text-sm text-ink-muted leading-relaxed">
                   Our most requested inter-emirate corridor — shared seats or
-                  private chauffeur.
+                  private chauffeur between Dubai and Abu Dhabi.
                 </p>
                 <Link
-                  href="/routes/dubai-to-abu-dhabi"
+                  href="/dubai-to-abu-dhabi-car-lift"
                   className="mt-5 inline-flex min-h-11 items-center text-sm font-semibold text-gold transition-default hover:text-gold-bright"
                 >
-                  Open route page →
+                  Open car lift page →
                 </Link>
               </Card>
             </StaggerItem>

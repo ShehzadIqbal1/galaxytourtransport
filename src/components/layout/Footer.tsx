@@ -17,55 +17,59 @@ export function Footer() {
           <p className="mt-4 max-w-sm text-ink-muted leading-relaxed">
             {siteConfig.description}
           </p>
+          <address className="mt-6 not-italic text-sm text-ink-muted">
+            <p className="font-semibold text-ink">{siteConfig.name}</p>
+            <p className="mt-1">
+              <a
+                href={siteConfig.mapsUrl}
+                className="transition-default hover:text-gold"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {siteConfig.address.streetAddress},{" "}
+                {siteConfig.address.addressLocality}, UAE
+              </a>
+            </p>
+            <p className="mt-1">
+              <a
+                href={siteConfig.phoneHref}
+                className="transition-default hover:text-gold"
+              >
+                {siteConfig.phoneDisplay}
+              </a>
+            </p>
+            <p className="mt-1">
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="transition-default hover:text-gold"
+              >
+                {siteConfig.email}
+              </a>
+            </p>
+          </address>
         </div>
 
         <div className="md:col-span-3">
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.14em] text-ink">
-            Contact
+            Car lift & transfers
           </p>
-          <dl className="space-y-4 text-sm">
-            <div>
-              <dt className="font-semibold text-ink">Address</dt>
-              <dd className="mt-1">
-                <a
-                  href={siteConfig.mapsUrl}
-                  className="text-ink-muted transition-default hover:text-gold"
-                  target="_blank"
-                  rel="noopener noreferrer"
+          <ul className="space-y-2.5 text-sm text-ink-muted">
+            {siteConfig.footerServiceLinks.map((item) => (
+              <li key={item.id}>
+                <Link
+                  href={item.href}
+                  className="transition-default hover:text-gold"
                 >
-                  {siteConfig.address.streetAddress},{" "}
-                  {siteConfig.address.addressLocality}, UAE
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="font-semibold text-ink">Phone</dt>
-              <dd className="mt-1">
-                <a
-                  href={siteConfig.phoneHref}
-                  className="text-ink-muted transition-default hover:text-gold"
-                >
-                  {siteConfig.phoneDisplay}
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="font-semibold text-ink">Email</dt>
-              <dd className="mt-1">
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="text-ink-muted transition-default hover:text-gold"
-                >
-                  {siteConfig.email}
-                </a>
-              </dd>
-            </div>
-          </dl>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="md:col-span-3">
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.14em] text-ink">
-            Useful Links
+            Useful links
           </p>
           <ul className="space-y-2.5 text-sm text-ink-muted">
             {siteConfig.footerNav.map((item) => (
@@ -83,7 +87,7 @@ export function Footer() {
 
         <div className="md:col-span-2">
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.14em] text-ink">
-            Follow Us
+            Follow us
           </p>
           <ul className="flex gap-3">
             {siteConfig.social.map((link) => (

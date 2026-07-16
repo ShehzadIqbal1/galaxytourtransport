@@ -2,42 +2,100 @@ import type { MetadataRoute } from "next";
 import { blogPosts } from "@/content/blog";
 import { locations } from "@/content/locations";
 import { routes } from "@/content/routes";
+import { serviceLandings } from "@/content/serviceLandings";
 import { siteConfig } from "@/content/siteConfig";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPaths = [
-    "/",
-    "/routes",
-    "/locations",
-    "/services",
-    "/gallery",
-    "/about",
-    "/contact",
-    "/tours",
-    "/transport",
-    "/transport/airport-transfers",
-    "/blog",
+  const staticEntries: MetadataRoute.Sitemap = [
+    {
+      url: siteConfig.url,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    {
+      url: `${siteConfig.url}/services`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteConfig.url}/routes`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteConfig.url}/locations`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteConfig.url}/transport`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteConfig.url}/transport/airport-transfers`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${siteConfig.url}/tours`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${siteConfig.url}/gallery`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${siteConfig.url}/about`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${siteConfig.url}/contact`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${siteConfig.url}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.6,
+    },
   ];
 
-  const staticEntries: MetadataRoute.Sitemap = staticPaths.map((path) => ({
-    url: `${siteConfig.url}${path === "/" ? "" : path}`,
-    lastModified: new Date(),
-    changeFrequency: path === "/" ? "weekly" : "monthly",
-    priority: path === "/" ? 1 : 0.8,
-  }));
+  const serviceLandingEntries: MetadataRoute.Sitemap = serviceLandings.map(
+    (page) => ({
+      url: `${siteConfig.url}${page.path}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    }),
+  );
 
   const routeEntries: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${siteConfig.url}/routes/${route.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
-    priority: 0.9,
+    priority: 0.75,
   }));
 
   const locationEntries: MetadataRoute.Sitemap = locations.map((location) => ({
     url: `${siteConfig.url}/locations/${location.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
-    priority: 0.85,
+    priority: 0.7,
   }));
 
   const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
@@ -49,6 +107,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticEntries,
+    ...serviceLandingEntries,
     ...routeEntries,
     ...locationEntries,
     ...blogEntries,

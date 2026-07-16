@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
+import { getRouteHref } from "@/content/serviceLandings";
 import type { RouteDetail } from "@/lib/types";
 
 export interface RouteDetailCardProps {
@@ -9,6 +10,8 @@ export interface RouteDetailCardProps {
 }
 
 export function RouteDetailCard({ route }: RouteDetailCardProps) {
+  const href = getRouteHref(route.slug);
+
   return (
     <Card className="group overflow-hidden bg-charcoal2 transition-default hover:border-gold/40">
       <div className="relative aspect-[16/10]">
@@ -36,7 +39,7 @@ export function RouteDetailCard({ route }: RouteDetailCardProps) {
       <div className="p-5 sm:p-6">
         <h3 className="font-display text-2xl leading-tight text-ivory md:text-[1.7rem]">
           <Link
-            href={`/routes/${route.slug}`}
+            href={href}
             className="transition-default hover:text-gold-bright"
           >
             {route.title}
@@ -81,7 +84,7 @@ export function RouteDetailCard({ route }: RouteDetailCardProps) {
 
         <div className="mt-6">
           <Link
-            href={`/routes/${route.slug}`}
+            href={href}
             className="inline-flex items-center gap-2 text-sm font-semibold text-gold transition-default hover:text-gold-bright"
           >
             View route <span aria-hidden="true">→</span>

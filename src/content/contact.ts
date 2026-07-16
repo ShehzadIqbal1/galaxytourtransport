@@ -7,9 +7,12 @@ export const contactContent = {
   description:
     "WhatsApp is the fastest way to confirm a Galaxy booking for Dubai and Abu Dhabi corridors. Call or email if you prefer — we are based in Business Bay, Dubai.",
   nap: {
-    name: "Galaxy Tour & Transport",
-    addressLine: "Business Bay, Dubai, UAE",
-    phoneDisplay: "+971 50 559 7803",
+    name: siteConfig.name,
+    addressLine: `${siteConfig.address.streetAddress}, ${siteConfig.address.addressLocality}, UAE`,
+    phoneDisplay: siteConfig.phoneDisplay,
+    phoneHref: siteConfig.phoneHref,
+    email: siteConfig.email,
+    mapsUrl: siteConfig.mapsUrl,
   },
   channels: [
     {

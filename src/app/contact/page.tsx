@@ -44,7 +44,47 @@ export default function ContactPage() {
       />
       <div className="bg-paper section-padding">
         <div className="container-content">
-          <ul className="grid gap-6 md:grid-cols-2" role="list">
+          <h2 className="font-display text-3xl text-ink md:text-4xl">
+            Name, address & phone
+          </h2>
+          <p className="mt-3 max-w-2xl text-ink-muted leading-relaxed">
+            Consistent NAP details for Galaxy Tour & Transport — the same
+            Business Bay, Dubai base shown in our footer and Google Maps embed.
+          </p>
+          <address className="mt-8 not-italic">
+            <Card tone="light" elevated className="max-w-xl p-6">
+              <p className="font-display text-2xl text-ink">
+                {contactContent.nap.name}
+              </p>
+              <p className="mt-3 text-ink-muted">
+                <a
+                  href={contactContent.nap.mapsUrl}
+                  className="transition-default hover:text-gold"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {contactContent.nap.addressLine}
+                </a>
+              </p>
+              <p className="mt-2">
+                <a
+                  href={contactContent.nap.phoneHref}
+                  className="font-semibold text-ink transition-default hover:text-gold"
+                >
+                  {contactContent.nap.phoneDisplay}
+                </a>
+              </p>
+              <p className="mt-2">
+                <a
+                  href={`mailto:${contactContent.nap.email}`}
+                  className="text-ink-muted transition-default hover:text-gold"
+                >
+                  {contactContent.nap.email}
+                </a>
+              </p>
+            </Card>
+          </address>
+          <ul className="mt-10 grid gap-6 md:grid-cols-2" role="list">
             {contactContent.channels.map((channel) => (
               <li key={channel.id}>
                 <Card tone="light" elevated className="h-full overflow-hidden p-6">

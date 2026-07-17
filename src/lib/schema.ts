@@ -1,3 +1,4 @@
+import { serviceLandings } from "@/content/serviceLandings";
 import { siteConfig } from "@/content/siteConfig";
 import type {
   BlogPost,
@@ -8,11 +9,23 @@ import type {
 } from "@/lib/types";
 import { absoluteUrl } from "@/lib/metadata";
 
+const organizationId = `${siteConfig.url}/#organization`;
+const websiteId = `${siteConfig.url}/#website`;
+
+const knowsAbout = [
+  ...siteConfig.keywordsByPage.home,
+  ...siteConfig.keywordsByPage.airportTransfers,
+  "Car lift Dubai to Abu Dhabi",
+  "Private taxi Dubai",
+  "Desert safari UAE",
+  "Monthly car lift UAE",
+] as const;
+
 export function buildLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "TravelAgency", "TaxiService"],
-    "@id": `${siteConfig.url}/#organization`,
+    "@id": organizationId,
     name: siteConfig.name,
     legalName: siteConfig.legalName,
     url: siteConfig.url,
@@ -35,6 +48,53 @@ export function buildLocalBusinessSchema() {
     hasMap: siteConfig.mapsUrl,
     sameAs: siteConfig.social.map((link) => link.href),
     priceRange: "$$",
+    knowsAbout: [...knowsAbout],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: siteConfig.phoneDisplay,
+        contactType: "customer service",
+        areaServed: "AE",
+        availableLanguage: ["en"],
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "reservations",
+        areaServed: "AE",
+        availableLanguage: ["en"],
+        url: `https://wa.me/${siteConfig.whatsappNumber}`,
+      },
+    ],
+    makesOffer: serviceLandings.map((page) => ({
+      "@type": "Offer",
+      url: absoluteUrl(page.path),
+      itemOffered: {
+        "@type": "Service",
+        name: page.h1,
+        description: page.description,
+        serviceType: page.serviceType,
+        provider: { "@id": organizationId },
+        areaServed: {
+          "@type": "Country",
+          name: siteConfig.serviceArea,
+        },
+        url: absoluteUrl(page.path),
+      },
+    })),
+  };
+}
+
+export function buildWebSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": websiteId,
+    url: siteConfig.url,
+    name: siteConfig.name,
+    description: siteConfig.description,
+    inLanguage: "en-AE",
+    publisher: { "@id": organizationId },
+    about: { "@id": organizationId },
   };
 }
 
@@ -64,7 +124,7 @@ export function buildServiceSchema(
     name,
     description,
     provider: {
-      "@id": `${siteConfig.url}/#organization`,
+      "@id": organizationId,
     },
     areaServed: {
       "@type": "Country",
@@ -115,10 +175,12 @@ export function buildBlogPostingSchema(post: BlogPost) {
     author: {
       "@type": "Organization",
       name: siteConfig.name,
+      "@id": organizationId,
     },
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
+      "@id": organizationId,
       logo: {
         "@type": "ImageObject",
         url: absoluteUrl(siteConfig.logoPng),
@@ -126,6 +188,10 @@ export function buildBlogPostingSchema(post: BlogPost) {
     },
     mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
     keywords: post.keywords.join(", "),
+    about: post.keywords.map((keyword) => ({
+      "@type": "Thing",
+      name: keyword,
+    })),
   };
 }
 

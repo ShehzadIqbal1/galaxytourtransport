@@ -37,6 +37,7 @@ import { buildHomeMetadata } from "@/lib/metadata";
 import {
   buildFaqPageSchema,
   buildLocalBusinessSchema,
+  buildWebSiteSchema,
 } from "@/lib/schema";
 
 const ServiceFormats = dynamic(
@@ -61,7 +62,11 @@ export default function HomePage() {
   return (
     <>
       <JsonLd
-        data={[buildLocalBusinessSchema(), buildFaqPageSchema(faqItems)]}
+        data={[
+          buildLocalBusinessSchema(),
+          buildWebSiteSchema(),
+          buildFaqPageSchema(faqItems),
+        ]}
       />
       <Hero
         eyebrow={heroContent.eyebrow}

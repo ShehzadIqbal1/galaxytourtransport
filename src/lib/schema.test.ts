@@ -4,6 +4,7 @@ import {
   buildFaqPageSchema,
   buildLocalBusinessSchema,
   buildServiceSchema,
+  buildWebSiteSchema,
 } from "@/lib/schema";
 import type { FAQItem, RouteDetail } from "@/lib/types";
 
@@ -16,6 +17,20 @@ describe("schema generators", () => {
     expect(schema.areaServed).toEqual({
       "@type": "Country",
       name: "United Arab Emirates",
+    });
+    expect(schema.knowsAbout).toEqual(
+      expect.arrayContaining(["Car lift UAE", "Car lift Dubai to Abu Dhabi"]),
+    );
+    expect(schema.makesOffer).toEqual(expect.any(Array));
+    expect((schema.makesOffer as unknown[]).length).toBeGreaterThan(0);
+    expect(schema.contactPoint).toEqual(expect.any(Array));
+  });
+
+  it("builds WebSite schema linked to the organization", () => {
+    const schema = buildWebSiteSchema();
+    expect(schema["@type"]).toBe("WebSite");
+    expect(schema.publisher).toEqual({
+      "@id": expect.stringContaining("/#organization"),
     });
   });
 

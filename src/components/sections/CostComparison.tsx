@@ -168,6 +168,7 @@ export function CostComparison({
                 tone="light"
                 size="md"
                 align="start"
+                primaryOpensQuote
                 whatsappLabel={
                   active.tone === "risk"
                     ? "Get a licensed quote"

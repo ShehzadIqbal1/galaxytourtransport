@@ -1,0 +1,36 @@
+import type { QuoteFormContent } from "@/lib/types";
+
+export const quoteFormContent: QuoteFormContent = {
+  title: "Get a Quote",
+  description:
+    "Fill in the details below — we’ll confirm instantly on WhatsApp.",
+  nameLabel: "Full Name",
+  namePlaceholder: "Your full name",
+  phoneLabel: "Phone Number",
+  phonePlaceholder: "50 123 4567",
+  phoneCodeLabel: "AE +971",
+  pickupLabel: "Pickup Location",
+  pickupPlaceholder: "e.g. Dubai Airport T3",
+  dropoffLabel: "Drop-off Location",
+  dropoffPlaceholder: "e.g. Abu Dhabi City",
+  dateLabel: "Date",
+  timeLabel: "Time",
+  vehicleLabel: "Select Vehicle",
+  vehiclePlaceholder: "Choose your preferred vehicle",
+  vehicleCustomOptionLabel: "Custom — tell us what you need",
+  vehicleCustomLabel: "Preferred Vehicle",
+  vehicleCustomPlaceholder: "e.g. Mercedes S-Class, 7-seater van…",
+  submitLabel: "Send Booking via WhatsApp",
+  requiredNote: "All fields marked * are required.",
+  errors: {
+    name: "Please enter your full name.",
+    phone: "Enter a valid UAE mobile number (9 digits).",
+    pickup: "Please enter a pickup location.",
+    dropoff: "Please enter a drop-off location.",
+    date: "Please select a date.",
+    datePast: "Please choose today or a future date.",
+    time: "Please select a time.",
+    vehicle: "Please select a vehicle.",
+    vehicleCustom: "Please describe the vehicle you need.",
+  },
+};

@@ -83,6 +83,7 @@ export function ServiceLandingView({ page }: ServiceLandingViewProps) {
                 className="mt-8"
                 size="lg"
                 tone="dark"
+                primaryOpensQuote
                 whatsappLabel="Book on WhatsApp"
                 whatsappMessage={page.whatsappMessage}
                 secondaryVariant="call"

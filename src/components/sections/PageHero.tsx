@@ -63,6 +63,7 @@ export function PageHero({
               className="mt-8"
               size="lg"
               tone="dark"
+              primaryOpensQuote
               whatsappLabel={whatsappLabel}
               {...(whatsappMessage ? { whatsappMessage } : {})}
               secondaryVariant="call"
@@ -72,6 +73,7 @@ export function PageHero({
               className="mt-8"
               size="lg"
               tone="dark"
+              primaryOpensQuote
               whatsappLabel={whatsappLabel}
               {...(whatsappMessage ? { whatsappMessage } : {})}
               secondaryLabel="Contact Us"

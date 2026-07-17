@@ -51,6 +51,7 @@ export function CTABand({
               align="center"
               size="lg"
               tone="dark"
+              primaryOpensQuote
               whatsappLabel={content.primaryLabel}
               whatsappMessage={content.whatsappMessage}
               {...(content.secondaryLabel

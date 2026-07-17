@@ -26,6 +26,7 @@ export function TrustSection({ content }: TrustSectionProps) {
           className="mt-10"
           tone="light"
           size="md"
+          primaryOpensQuote
           whatsappLabel={content.ctaLabel}
           whatsappMessage={content.whatsappMessage}
           secondaryVariant="call"

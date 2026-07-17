@@ -62,6 +62,7 @@ export default function GalleryPage() {
               align="center"
               tone="dark"
               size="md"
+              primaryOpensQuote
               whatsappLabel="Ask on WhatsApp"
               whatsappMessage="Hello Galaxy — I don't see the exact vehicle I need. Can you recommend one?"
               secondaryVariant="call"

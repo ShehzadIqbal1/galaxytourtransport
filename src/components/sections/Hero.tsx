@@ -70,6 +70,7 @@ export function Hero({
                 className="mt-8"
                 size="lg"
                 tone="dark"
+                primaryOpensQuote
                 whatsappLabel={primaryCta}
                 whatsappMessage={whatsappMessage}
                 secondaryLabel={secondaryCta}

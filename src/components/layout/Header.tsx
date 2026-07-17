@@ -3,9 +3,8 @@ import { WhatsAppIcon } from "@/components/icons";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { NavDropdown } from "@/components/layout/NavDropdown";
 import { TopBar } from "@/components/layout/TopBar";
-import { CtaButton } from "@/components/ui/CtaButton";
+import { QuoteTrigger } from "@/components/quote/QuoteTrigger";
 import { siteConfig } from "@/content/siteConfig";
-import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 function flattenNavForMobile() {
   // Keep top-level items only so Blog/Contact stay visible without scrolling
@@ -37,17 +36,16 @@ export function Header() {
             </ul>
           </nav>
 
-          <div className="flex shrink-0 items-center gap-2">
-            <CtaButton
-              href={buildWhatsAppLink(siteConfig.defaultWhatsAppMessage)}
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+            <QuoteTrigger
               variant="gold"
               size="sm"
-              external
-              className="hidden sm:inline-flex"
-              icon={<WhatsAppIcon className="h-4 w-4" />}
+              className="min-h-9 gap-1 px-2.5 py-1.5 text-[10px] tracking-[0.06em] sm:min-h-11 sm:gap-2 sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.12em]"
+              icon={<WhatsAppIcon className="hidden h-4 w-4 sm:block" />}
             >
-              Get a Quote
-            </CtaButton>
+              <span className="sm:hidden">Quote</span>
+              <span className="hidden sm:inline">Get a Quote</span>
+            </QuoteTrigger>
             <MobileNav
               items={flattenNavForMobile()}
               whatsappMessage={siteConfig.defaultWhatsAppMessage}

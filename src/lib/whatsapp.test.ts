@@ -1,7 +1,10 @@
 import { describe, expect, it } from "vitest";
 import {
   buildContactWhatsAppMessage,
+  buildQuoteWhatsAppMessage,
   buildWhatsAppLink,
+  formatUaeWhatsAppPhone,
+  isValidUaeLocalMobile,
 } from "@/lib/whatsapp";
 
 describe("buildWhatsAppLink", () => {
@@ -47,5 +50,30 @@ describe("buildContactWhatsAppMessage", () => {
 
     expect(message).not.toContain("Email:");
     expect(message).toContain("Name: Omar");
+  });
+});
+
+describe("quote booking helpers", () => {
+  it("validates UAE local mobile numbers", () => {
+    expect(isValidUaeLocalMobile("501234567")).toBe(true);
+    expect(isValidUaeLocalMobile("50 123 4567")).toBe(true);
+    expect(isValidUaeLocalMobile("401234567")).toBe(false);
+    expect(isValidUaeLocalMobile("50123")).toBe(false);
+  });
+
+  it("formats quote message for WhatsApp", () => {
+    const message = buildQuoteWhatsAppMessage({
+      name: "Sara",
+      phone: formatUaeWhatsAppPhone("501234567"),
+      pickup: "DXB T3",
+      dropoff: "Abu Dhabi",
+      date: "18/07/2026",
+      time: "09:30",
+      vehicle: "Hyundai Sonata",
+    });
+
+    expect(message).toContain("Phone: +971501234567");
+    expect(message).toContain("Pickup: DXB T3");
+    expect(message).toContain("Vehicle: Hyundai Sonata");
   });
 });

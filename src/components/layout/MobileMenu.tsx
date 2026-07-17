@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { Logo } from "@/components/brand/Logo";
 import { CloseIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
+import { useQuote } from "@/components/quote/QuoteProvider";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { siteConfig } from "@/content/siteConfig";
 import type { NavItem } from "@/lib/types";
@@ -24,6 +25,8 @@ export function MobileMenu({
   whatsappMessage,
   whatsappLabel,
 }: MobileMenuProps) {
+  const { openQuote } = useQuote();
+
   useEffect(() => {
     if (!open) {
       return;
@@ -93,6 +96,19 @@ export function MobileMenu({
         </nav>
 
         <div className="shrink-0 space-y-3 border-t border-sand bg-ivory px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+          <CtaButton
+            type="button"
+            variant="gold"
+            size="md"
+            className="w-full"
+            icon={<WhatsAppIcon className="h-5 w-5" />}
+            onClick={() => {
+              onClose();
+              openQuote();
+            }}
+          >
+            Get a Quote
+          </CtaButton>
           <CtaButton
             href={buildWhatsAppLink(whatsappMessage)}
             variant="whatsapp"

@@ -157,6 +157,40 @@ export interface ContactFormContent {
   requiredNote: string;
 }
 
+export interface QuoteFormContent {
+  title: string;
+  description: string;
+  nameLabel: string;
+  namePlaceholder: string;
+  phoneLabel: string;
+  phonePlaceholder: string;
+  phoneCodeLabel: string;
+  pickupLabel: string;
+  pickupPlaceholder: string;
+  dropoffLabel: string;
+  dropoffPlaceholder: string;
+  dateLabel: string;
+  timeLabel: string;
+  vehicleLabel: string;
+  vehiclePlaceholder: string;
+  vehicleCustomOptionLabel: string;
+  vehicleCustomLabel: string;
+  vehicleCustomPlaceholder: string;
+  submitLabel: string;
+  requiredNote: string;
+  errors: {
+    name: string;
+    phone: string;
+    pickup: string;
+    dropoff: string;
+    date: string;
+    datePast: string;
+    time: string;
+    vehicle: string;
+    vehicleCustom: string;
+  };
+}
+
 export interface SocialLink {
   id: string;
   label: string;

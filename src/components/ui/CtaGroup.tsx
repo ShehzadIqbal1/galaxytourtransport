@@ -1,5 +1,8 @@
+"use client";
+
 import type { ReactNode } from "react";
 import { PhoneIcon, WhatsAppIcon } from "@/components/icons";
+import { useQuote } from "@/components/quote/QuoteProvider";
 import { CtaButton, type CtaSize } from "@/components/ui/CtaButton";
 import { siteConfig } from "@/content/siteConfig";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
@@ -7,6 +10,8 @@ import { buildWhatsAppLink } from "@/lib/whatsapp";
 export interface CtaGroupProps {
   whatsappLabel: string;
   whatsappMessage?: string;
+  /** When true, primary CTA opens the Get a Quote form instead of WhatsApp. */
+  primaryOpensQuote?: boolean;
   secondaryLabel?: string;
   secondaryHref?: string;
   secondaryVariant?: "call" | "link";
@@ -20,11 +25,12 @@ export interface CtaGroupProps {
 
 /**
  * Canonical CTA structure site-wide:
- * Primary WhatsApp → Secondary call/link → optional phone meta line.
+ * Primary WhatsApp / Quote → Secondary call/link → optional phone meta line.
  */
 export function CtaGroup({
   whatsappLabel,
   whatsappMessage,
+  primaryOpensQuote = false,
   secondaryLabel,
   secondaryHref,
   secondaryVariant = "call",
@@ -35,6 +41,7 @@ export function CtaGroup({
   meta,
   className = "",
 }: CtaGroupProps) {
+  const { openQuote } = useQuote();
   const alignment =
     align === "center"
       ? "items-center justify-center text-center"
@@ -47,6 +54,8 @@ export function CtaGroup({
   const resolvedSecondaryLabel =
     secondaryLabel ?? (secondaryVariant === "call" ? "Call Now" : "Contact Us");
 
+  const iconSize = size === "sm" ? "h-4 w-4" : "h-5 w-5";
+
   return (
     <div className={`flex flex-col gap-4 ${alignment} ${className}`}>
       <div
@@ -54,15 +63,27 @@ export function CtaGroup({
           align === "center" ? "justify-center" : "justify-start"
         }`}
       >
-        <CtaButton
-          href={buildWhatsAppLink(whatsappMessage)}
-          variant="whatsapp"
-          size={size}
-          external
-          icon={<WhatsAppIcon className={size === "sm" ? "h-4 w-4" : "h-5 w-5"} />}
-        >
-          {whatsappLabel}
-        </CtaButton>
+        {primaryOpensQuote ? (
+          <CtaButton
+            type="button"
+            variant="whatsapp"
+            size={size}
+            icon={<WhatsAppIcon className={iconSize} />}
+            onClick={openQuote}
+          >
+            {whatsappLabel}
+          </CtaButton>
+        ) : (
+          <CtaButton
+            href={buildWhatsAppLink(whatsappMessage)}
+            variant="whatsapp"
+            size={size}
+            external
+            icon={<WhatsAppIcon className={iconSize} />}
+          >
+            {whatsappLabel}
+          </CtaButton>
+        )}
 
         <CtaButton
           href={resolvedSecondaryHref}
@@ -71,7 +92,7 @@ export function CtaGroup({
           external={secondaryVariant === "call"}
           icon={
             secondaryVariant === "call" ? (
-              <PhoneIcon className={size === "sm" ? "h-4 w-4" : "h-5 w-5"} />
+              <PhoneIcon className={iconSize} />
             ) : undefined
           }
         >

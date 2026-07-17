@@ -5,6 +5,8 @@ import { routes } from "@/content/routes";
 import { serviceLandings } from "@/content/serviceLandings";
 import { siteConfig } from "@/content/siteConfig";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticEntries: MetadataRoute.Sitemap = [
     {

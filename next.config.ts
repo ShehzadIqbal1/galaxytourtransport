@@ -4,11 +4,13 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
+/** Set STATIC_EXPORT=1 for Hostinger (`npm run build:static`). Default = Vercel/Node. */
+const isStaticExport = process.env.STATIC_EXPORT === "1";
+
 const nextConfig: NextConfig = {
-  // Static HTML export for Hostinger / shared hosting (uploads the `out/` folder).
-  output: "export",
+  ...(isStaticExport ? { output: "export" as const } : {}),
   images: {
-    unoptimized: true,
+    ...(isStaticExport ? { unoptimized: true } : {}),
     formats: ["image/avif", "image/webp"],
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
@@ -17,8 +19,24 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: projectRoot,
   },
-  // Note: next.config redirects are not supported with `output: "export"`.
-  // Apache redirects for Hostinger live in `public/.htaccess` (copied into `out/`).
+  ...(!isStaticExport
+    ? {
+        async redirects() {
+          return [
+            {
+              source: "/routes/dubai-to-abu-dhabi",
+              destination: "/dubai-to-abu-dhabi-car-lift",
+              permanent: true,
+            },
+            {
+              source: "/routes/abu-dhabi-to-dubai",
+              destination: "/abu-dhabi-to-dubai-car-lift",
+              permanent: true,
+            },
+          ];
+        },
+      }
+    : {}),
 };
 
 export default nextConfig;

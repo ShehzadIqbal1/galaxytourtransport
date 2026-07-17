@@ -56,14 +56,14 @@ export const fleetVehicles: FleetVehicle[] = [
   },
   {
     id: "sonata",
-    name: "Honda Sonata",
+    name: "Hyundai Sonata",
     category: "sedan",
     categoryLabel: "Sedan",
     seats: 5,
     premium: false,
     tags: ["5 seats", "AC", "Executive"],
     image: "/images/fleet/honda-sonata.jpg",
-    imageAlt: "Honda Sonata — executive mid-size sedan",
+    imageAlt: "Hyundai Sonata — executive mid-size sedan",
     description:
       "Executive mid-size sedan for longer corridors and guests who want extra cabin quiet.",
   },

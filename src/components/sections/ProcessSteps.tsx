@@ -54,55 +54,60 @@ export function ProcessSteps({
 
         <Reveal>
           <nav
-            className="relative mx-auto mb-12 max-w-xl"
+            className="relative mx-auto mb-12 max-w-full overflow-x-clip sm:max-w-xl"
             aria-label="Booking steps progress"
           >
             {/*
-              Organic wave path (hand-drawn feel) — track + gold progress.
-              Circles sit on the midline; the path weaves between them.
+              Organic wave path — track + gold progress between step centers.
+              Width-constrained wrapper required so viewBox does not force 400px.
             */}
-            <svg
-              className="pointer-events-none absolute left-5 right-5 top-0 h-10"
-              viewBox="0 0 400 40"
-              fill="none"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
-              <path
-                d={PROCESS_WAVE_PATH}
-                stroke="rgba(245,240,232,0.2)"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                vectorEffect="non-scaling-stroke"
-              />
-              <path
-                d={PROCESS_WAVE_PATH}
-                stroke="var(--color-gold)"
-                strokeWidth="1.85"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                vectorEffect="non-scaling-stroke"
-                pathLength={1}
-                strokeDasharray={1}
-                strokeDashoffset={
-                  steps.length > 1 ? 1 - active / (steps.length - 1) : 0
-                }
-                className="transition-[stroke-dashoffset] duration-500 ease-out"
-              />
-            </svg>
-            <ol className="relative flex items-start justify-between">
+            <div className="pointer-events-none absolute inset-x-5 top-0 h-10">
+              <svg
+                className="h-full w-full"
+                viewBox="0 0 400 40"
+                fill="none"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path
+                  d={PROCESS_WAVE_PATH}
+                  stroke="rgba(245,240,232,0.2)"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  vectorEffect="non-scaling-stroke"
+                />
+                <path
+                  d={PROCESS_WAVE_PATH}
+                  stroke="var(--color-gold)"
+                  strokeWidth="1.85"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  vectorEffect="non-scaling-stroke"
+                  pathLength={1}
+                  strokeDasharray={1}
+                  strokeDashoffset={
+                    steps.length > 1 ? 1 - active / (steps.length - 1) : 0
+                  }
+                  className="transition-[stroke-dashoffset] duration-500 ease-out"
+                />
+              </svg>
+            </div>
+            <ol className="relative flex items-start justify-between gap-1">
               {steps.map((step, index) => {
                 const isActive = index === active;
                 const isDone = index < active;
                 return (
-                  <li key={step.id} className="flex flex-col items-center gap-3">
+                  <li
+                    key={step.id}
+                    className="flex min-w-0 flex-1 flex-col items-center gap-3"
+                  >
                     <button
                       type="button"
                       onClick={() => goTo(index)}
                       aria-label={`Step ${step.step}: ${step.title}`}
                       aria-current={isActive ? "step" : undefined}
-                      className={`relative z-10 flex h-11 w-11 items-center justify-center rounded-full border text-sm font-semibold transition-default ${
+                      className={`relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border text-sm font-semibold transition-default ${
                         isActive
                           ? "border-gold bg-gold text-onyx shadow-soft"
                           : isDone
@@ -113,7 +118,7 @@ export function ProcessSteps({
                       {String(step.step).padStart(2, "0")}
                     </button>
                     <span
-                      className={`max-w-20 text-center text-[10px] font-medium leading-snug sm:max-w-24 sm:text-[11px] ${
+                      className={`max-w-full px-0.5 text-center text-[10px] font-medium leading-snug sm:text-[11px] ${
                         isActive ? "text-ivory" : "text-ivory/45"
                       }`}
                     >
@@ -182,9 +187,9 @@ export function ProcessSteps({
             <AnimatePresence mode="wait">
               <motion.div
                 key={`${current.id}-copy`}
-                initial={reduceMotion ? false : { opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={reduceMotion ? { opacity: 0 } : { opacity: 0, x: -12 }}
+                initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -12 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">

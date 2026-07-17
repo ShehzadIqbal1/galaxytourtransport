@@ -48,7 +48,6 @@ html {
     background-color: var(--color-paper);
     color: var(--color-ink);
     font-family: var(--font-sans-family);
-    overflow-x: hidden;
   }
 
   :focus-visible {
@@ -156,10 +155,14 @@ html {
 @keyframes whatsapp-pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgb(37 211 102 / 0.45);
+    box-shadow:
+      0 6px 20px rgb(37 211 102 / 0.45),
+      0 0 0 0 rgb(37 211 102 / 0.45);
   }
   70% {
-    box-shadow: 0 0 0 14px rgb(37 211 102 / 0);
+    box-shadow:
+      0 6px 20px rgb(37 211 102 / 0.45),
+      0 0 0 14px rgb(37 211 102 / 0);
   }
 }
 

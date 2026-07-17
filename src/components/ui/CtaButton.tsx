@@ -25,7 +25,13 @@ const sizeClasses: Record<CtaSize, string> = {
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 rounded-md transition-default focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:cursor-not-allowed disabled:opacity-50";
+  "items-center justify-center gap-2 rounded-md transition-default focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:cursor-not-allowed disabled:opacity-50";
+
+function hasDisplayClass(className: string): boolean {
+  return /\b(hidden|block|inline-block|inline|flex|inline-flex|grid|inline-grid|contents)\b/.test(
+    className,
+  );
+}
 
 type SharedProps = {
   variant?: CtaVariant;
@@ -61,7 +67,15 @@ export function CtaButton({
   className = "",
   ...rest
 }: CtaButtonProps) {
-  const classNames = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+  const classNames = [
+    hasDisplayClass(className) ? "" : "inline-flex",
+    baseClasses,
+    variantClasses[variant],
+    sizeClasses[size],
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   if ("href" in rest && rest.href) {
     const { href, external, ...anchorRest } = rest;

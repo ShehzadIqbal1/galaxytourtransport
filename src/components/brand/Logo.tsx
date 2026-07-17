@@ -29,7 +29,7 @@ function LogoWordmark({ compact }: { compact: boolean }) {
   if (compact) {
     return (
       <span className="min-w-0 translate-y-0.5 md:translate-y-1">
-        <span className="font-display text-lg leading-none tracking-tight text-ink md:text-xl">
+        <span className="block truncate font-display text-base leading-none tracking-tight text-ink sm:text-lg md:text-xl">
           Tour <span className="text-gold">& Transport</span>
         </span>
       </span>
@@ -38,7 +38,7 @@ function LogoWordmark({ compact }: { compact: boolean }) {
 
   return (
     <span className="min-w-0 translate-y-0.5 md:translate-y-1">
-      <span className="font-display text-xl leading-none tracking-tight text-ink md:text-2xl">
+      <span className="block truncate font-display text-xl leading-none tracking-tight text-ink md:text-2xl">
         Tour <span className="text-gold">& Transport</span>
       </span>
       <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[0.18em] text-ink-muted md:text-[11px]">
@@ -77,7 +77,7 @@ export function Logo({
   return (
     <Link
       href={href}
-      className="group shrink-0 rounded-sm transition-default hover:opacity-95"
+      className="group min-w-0 rounded-sm transition-default hover:opacity-95"
       aria-label={`${siteConfig.name} home`}
       {...(onNavigate ? { onClick: onNavigate } : {})}
     >

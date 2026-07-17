@@ -267,3 +267,12 @@ export const routesSection = {
   description:
     "From Dubai–Abu Dhabi car lifts to desert evenings and mountain day trips — each with clear pickup points.",
 } as const;
+
+export const blogSection = {
+  eyebrow: "Travel notes",
+  title: "Guides for corridors, airports, and itineraries",
+  description:
+    "Practical reading for UAE travellers planning car lifts, private chauffeurs, airport pickups, and tour days.",
+  viewAllLabel: "View all guides",
+  viewAllHref: "/blog",
+} as const;

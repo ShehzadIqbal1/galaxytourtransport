@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import { AllRoutesCovered } from "@/components/sections/AllRoutesCovered";
+import { BlogPreview } from "@/components/sections/BlogPreview";
 import { CostComparison } from "@/components/sections/CostComparison";
 import { CTABand } from "@/components/sections/CTABand";
 import { FleetShowcase } from "@/components/sections/FleetShowcase";
@@ -11,11 +12,13 @@ import { ServiceExplainer } from "@/components/sections/ServiceExplainer";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { TrustSection } from "@/components/sections/TrustSection";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { blogPosts } from "@/content/blog";
 import { getCoveredCorridorRoutes } from "@/content/coveredCorridors";
 import { faqItems } from "@/content/faq";
 import { getFleetByCategory } from "@/content/fleet";
 import { serviceFormats } from "@/content/formats";
 import {
+  blogSection,
   costComparisons,
   explainerContent,
   explainerFeatures,
@@ -51,6 +54,8 @@ const FAQSection = dynamic(
 );
 
 export const metadata = buildHomeMetadata();
+
+const previewPosts = blogPosts.slice(0, 3);
 
 export default function HomePage() {
   return (
@@ -110,6 +115,14 @@ export default function HomePage() {
         title="Documented journeys vs informal pickups"
         description="A licensed operator leaves a paper trail; informal rides rarely do."
         columns={legalColumns}
+      />
+      <BlogPreview
+        eyebrow={blogSection.eyebrow}
+        title={blogSection.title}
+        description={blogSection.description}
+        posts={previewPosts}
+        viewAllLabel={blogSection.viewAllLabel}
+        viewAllHref={blogSection.viewAllHref}
       />
       <FAQSection
         eyebrow="FAQ"

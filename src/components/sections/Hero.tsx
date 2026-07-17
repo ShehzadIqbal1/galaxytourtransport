@@ -42,12 +42,12 @@ export function Hero({
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
             <FadeIn delay={0.05}>
-              <p className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-gold">
-                <span className="relative flex h-2 w-2" aria-hidden="true">
+              <p className="inline-flex max-w-full items-center gap-1.5 whitespace-nowrap rounded-full border border-gold/40 bg-gold/10 px-2.5 py-1 text-[0.625rem] font-semibold uppercase tracking-[0.05em] text-gold sm:gap-2 sm:px-4 sm:py-1.5 sm:text-xs sm:tracking-[0.16em]">
+                <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
                   <span className="absolute inset-0 animate-live-ping rounded-full bg-gold/70" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
                 </span>
-                {eyebrow}
+                <span className="min-w-0">{eyebrow}</span>
               </p>
             </FadeIn>
 

@@ -8,19 +8,13 @@ import { siteConfig } from "@/content/siteConfig";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 function flattenNavForMobile() {
-  return siteConfig.nav.flatMap((item) => {
-    if (!item.children || item.children.length === 0) {
-      return [item];
-    }
-    return [
-      { id: item.id, label: item.label, href: item.href },
-      ...item.children.map((child) => ({
-        id: child.id,
-        label: child.label,
-        href: child.href,
-      })),
-    ];
-  });
+  // Keep top-level items only so Blog/Contact stay visible without scrolling
+  // past every Popular Routes child link.
+  return siteConfig.nav.map((item) => ({
+    id: item.id,
+    label: item.label,
+    href: item.href,
+  }));
 }
 
 export function Header() {

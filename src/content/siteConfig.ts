@@ -115,21 +115,21 @@ export const siteConfig = {
     },
     { id: "locations", label: "Locations", href: "/locations" },
     { id: "services", label: "Services", href: "/services" },
+    { id: "blog", label: "Blog", href: "/blog" },
     { id: "gallery", label: "Gallery", href: "/gallery" },
     { id: "about", label: "About", href: "/about" },
     { id: "contact", label: "Contact", href: "/contact" },
-    { id: "blog", label: "Blog", href: "/blog" },
   ] satisfies NavItem[],
   footerNav: [
     { id: "routes", label: "Popular routes", href: "/routes" },
     { id: "locations", label: "Locations", href: "/locations" },
     { id: "services", label: "Services", href: "/services" },
+    { id: "blog", label: "Blog", href: "/blog" },
     { id: "tours", label: "Tours", href: "/tours" },
     { id: "transport", label: "Transport", href: "/transport" },
     { id: "gallery", label: "Gallery", href: "/gallery" },
     { id: "about", label: "About", href: "/about" },
     { id: "contact", label: "Contact", href: "/contact" },
-    { id: "blog", label: "Blog", href: "/blog" },
   ] satisfies NavItem[],
   footerServiceLinks: [
     {

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { useMemo } from "react";
 import { FormatCard } from "@/components/sections/FormatCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Tabs } from "@/components/ui/Tabs";
@@ -14,23 +14,10 @@ export interface ServiceFormatsProps {
 }
 
 function FormatGrid({ items }: { items: ServiceFormat[] }) {
-  const reduceMotion = useReducedMotion();
-
   return (
     <div className="grid gap-6 md:grid-cols-3">
-      {items.map((format, index) => (
-        <motion.div
-          key={format.id}
-          initial={reduceMotion ? false : { opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.45,
-            delay: index * 0.08,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-        >
-          <FormatCard format={format} />
-        </motion.div>
+      {items.map((format) => (
+        <FormatCard key={format.id} format={format} />
       ))}
     </div>
   );
@@ -42,8 +29,30 @@ export function ServiceFormats({
   description,
   formats,
 }: ServiceFormatsProps) {
-  const tours = formats.filter((format) => format.category === "tours");
-  const transport = formats.filter((format) => format.category === "transport");
+  const tours = useMemo(
+    () => formats.filter((format) => format.category === "tours"),
+    [formats],
+  );
+  const transport = useMemo(
+    () => formats.filter((format) => format.category === "transport"),
+    [formats],
+  );
+
+  const tabItems = useMemo(
+    () => [
+      {
+        id: "tours",
+        label: "Tours",
+        content: <FormatGrid items={tours} />,
+      },
+      {
+        id: "transport",
+        label: "Transport",
+        content: <FormatGrid items={transport} />,
+      },
+    ],
+    [tours, transport],
+  );
 
   return (
     <section
@@ -58,21 +67,7 @@ export function ServiceFormats({
           titleId="formats-heading"
           description={description}
         />
-        <Tabs
-          label="Service categories"
-          items={[
-            {
-              id: "tours",
-              label: "Tours",
-              content: <FormatGrid items={tours} />,
-            },
-            {
-              id: "transport",
-              label: "Transport",
-              content: <FormatGrid items={transport} />,
-            },
-          ]}
-        />
+        <Tabs label="Service categories" items={tabItems} />
       </div>
     </section>
   );

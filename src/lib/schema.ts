@@ -30,7 +30,7 @@ export function buildLocalBusinessSchema() {
     legalName: siteConfig.legalName,
     url: siteConfig.url,
     image: absoluteUrl(siteConfig.defaultOgImage),
-    logo: absoluteUrl(siteConfig.logoPng),
+    logo: absoluteUrl(siteConfig.logoFull),
     description: siteConfig.description,
     telephone: siteConfig.phoneDisplay,
     email: siteConfig.email,
@@ -183,7 +183,7 @@ export function buildBlogPostingSchema(post: BlogPost) {
       "@id": organizationId,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl(siteConfig.logoPng),
+        url: absoluteUrl(siteConfig.logoFull),
       },
     },
     mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),

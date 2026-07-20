@@ -83,6 +83,12 @@ export default function HomePage() {
         imageAlt={siteConfig.defaultOgImageAlt}
       />
       <TrustBar items={trustBarItems} />
+      <ServiceFormats
+        eyebrow={formatsSection.eyebrow}
+        title={formatsSection.title}
+        description={formatsSection.description}
+        formats={serviceFormats}
+      />
       <ServiceExplainer
         eyebrow={explainerContent.eyebrow}
         title={explainerContent.title}
@@ -94,12 +100,6 @@ export default function HomePage() {
         title="Shared, private, or informal — know the trade-offs"
         description="Compare seat-based car lifts, licensed private chauffeurs, and the risks of unlicensed roadside offers."
         comparisons={costComparisons}
-      />
-      <ServiceFormats
-        eyebrow={formatsSection.eyebrow}
-        title={formatsSection.title}
-        description={formatsSection.description}
-        formats={serviceFormats}
       />
       <FleetShowcase
         eyebrow={fleetSection.eyebrow}

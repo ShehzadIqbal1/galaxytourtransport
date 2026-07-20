@@ -33,12 +33,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-12 md:gap-8 lg:gap-10">
           {/* Brand + contact */}
           <div className="min-w-0 md:col-span-4">
-            <Logo
-              variant="full"
-              href="/"
-              className="max-w-full"
-              markClassName="h-11 w-11 shrink-0 sm:h-12 sm:w-12"
-            />
+            <Logo variant="full" href="/" className="max-w-full" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-muted">
               {siteConfig.description}
             </p>

@@ -21,15 +21,11 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-sand bg-paper/95 shadow-soft backdrop-blur-md supports-[backdrop-filter]:bg-paper/90">
       <TopBar />
       <div className="border-b border-gold/20 bg-ivory/95 supports-[backdrop-filter]:bg-ivory/90">
-        <div className="container-content flex items-center justify-between gap-2 py-2.5 sm:gap-3 sm:py-3 md:gap-6 md:py-4">
-          <Logo
-            variant="compact"
-            className="min-w-0"
-            markClassName="h-11 w-11 shrink-0 sm:h-15 sm:w-15 md:h-17 md:w-17"
-          />
+        <div className="container-content flex items-center justify-between gap-3 py-3 sm:gap-4 sm:py-3.5 md:py-4">
+          <Logo variant="compact" className="min-w-0" />
 
           <nav aria-label="Primary" className="hidden min-w-0 flex-1 justify-center xl:flex">
-            <ul className="flex flex-wrap items-center justify-center gap-x-1 gap-y-1">
+            <ul className="flex flex-nowrap items-center justify-center gap-x-0.5">
               {siteConfig.nav.map((item) => (
                 <NavDropdown key={item.id} item={item} />
               ))}

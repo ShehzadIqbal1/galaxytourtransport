@@ -63,12 +63,7 @@ export function MobileMenu({
       />
       <div className="absolute inset-x-0 top-0 flex max-h-[100dvh] flex-col overflow-hidden border-b border-sand bg-paper shadow-card">
         <div className="flex shrink-0 items-center justify-between px-5 py-5">
-          <Logo
-            variant="compact"
-            href="/"
-            onNavigate={onClose}
-            markClassName="h-14 w-14"
-          />
+          <Logo variant="compact" href="/" onNavigate={onClose} />
           <button
             type="button"
             className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-sand text-ink transition-default hover:border-gold hover:text-gold"

@@ -15,12 +15,13 @@ export interface LogoProps {
 function LogoMark({ className = "h-11 w-11" }: { className?: string }) {
   return (
     <Image
-      src={siteConfig.logoPng}
+      src={siteConfig.logoFull}
       alt=""
       width={160}
       height={160}
-      className={`rounded-full object-cover shadow-soft ring-1 ring-gold/25 ${className}`}
+      className={`shrink-0 rounded-md object-contain shadow-soft ring-1 ring-gold/30 ${className}`}
       priority
+      unoptimized
     />
   );
 }
@@ -28,18 +29,18 @@ function LogoMark({ className = "h-11 w-11" }: { className?: string }) {
 function LogoWordmark({ compact }: { compact: boolean }) {
   if (compact) {
     return (
-      <span className="min-w-0 translate-y-0.5 md:translate-y-1">
-        <span className="block truncate font-display text-base leading-none tracking-tight text-ink sm:text-lg md:text-xl">
-          Tour <span className="text-gold">& Transport</span>
+      <span className="min-w-0 leading-none">
+        <span className="block truncate font-display text-sm tracking-tight text-ink sm:text-base md:text-lg">
+          Tours <span className="text-gold">&amp; Transport</span>
         </span>
       </span>
     );
   }
 
   return (
-    <span className="min-w-0 translate-y-0.5 md:translate-y-1">
-      <span className="block truncate font-display text-xl leading-none tracking-tight text-ink md:text-2xl">
-        Tour <span className="text-gold">& Transport</span>
+    <span className="min-w-0 leading-none">
+      <span className="block font-display text-xl tracking-tight text-ink md:text-2xl">
+        Tours <span className="text-gold">&amp; Transport</span>
       </span>
       <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[0.18em] text-ink-muted md:text-[11px]">
         Across the UAE
@@ -58,11 +59,15 @@ export function Logo({
   const markSize =
     markClassName ??
     (variant === "mark"
-      ? "h-10 w-10"
-      : "h-11 w-11 shrink-0 md:h-12 md:w-12");
+      ? "h-11 w-11"
+      : variant === "compact"
+        ? "h-14 w-14 sm:h-16 sm:w-16 md:h-[4.25rem] md:w-[4.25rem]"
+        : "h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem] md:h-20 md:w-20");
 
   const content = (
-    <span className={`inline-flex items-center gap-3 ${className}`.trim()}>
+    <span
+      className={`inline-flex min-w-0 items-center gap-2.5 sm:gap-3 ${className}`.trim()}
+    >
       <LogoMark className={markSize} />
       {variant !== "mark" ? (
         <LogoWordmark compact={variant === "compact"} />
@@ -77,7 +82,7 @@ export function Logo({
   return (
     <Link
       href={href}
-      className="group min-w-0 rounded-sm transition-default hover:opacity-95"
+      className="group min-w-0 shrink-0 rounded-sm transition-default hover:opacity-95"
       aria-label={`${siteConfig.name} home`}
       {...(onNavigate ? { onClick: onNavigate } : {})}
     >

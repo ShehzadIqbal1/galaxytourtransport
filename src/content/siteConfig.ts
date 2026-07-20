@@ -59,8 +59,9 @@ export const siteConfig = {
   defaultOgImage: "/images/hero/og-default.svg",
   defaultOgImageAlt:
     "Affordable chauffeur car lift UAE — Dubai to Abu Dhabi private transfers",
-  logo: "/images/brand/logo-mark.svg",
-  logoPng: "/images/brand/logo-mark.png",
+  logo: "/images/brand/logo-v4.png",
+  logoPng: "/images/brand/logo-v4.png",
+  logoFull: "/images/brand/logo-v4.png",
   serviceTags: [
     "All over the UAE",
     "Transportation & Tourism",

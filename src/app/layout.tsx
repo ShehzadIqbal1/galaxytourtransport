@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   publisher: siteConfig.name,
   icons: {
     icon: [
-      { url: "/icon", type: "image/png", sizes: "512x512" },
-      { url: "/favicon.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.png?v=4", type: "image/png", sizes: "512x512" },
+      { url: "/images/brand/logo-v4.png", type: "image/png" },
     ],
-    apple: [{ url: "/apple-icon", type: "image/png", sizes: "180x180" }],
-    shortcut: "/icon",
+    apple: [{ url: "/apple-icon.png?v=4", type: "image/png", sizes: "180x180" }],
+    shortcut: "/favicon.png?v=4",
   },
 };
 

@@ -53,13 +53,20 @@ export function Tabs({ items, className = "", label = "Sections" }: TabsProps) {
           );
         })}
       </div>
-      <div
-        role="tabpanel"
-        id={`${baseId}-panel-${active.id}`}
-        aria-labelledby={`${baseId}-tab-${active.id}`}
-      >
-        {active.content}
-      </div>
+      {items.map((item) => {
+        const selected = item.id === active.id;
+        return (
+          <div
+            key={item.id}
+            role="tabpanel"
+            id={`${baseId}-panel-${item.id}`}
+            aria-labelledby={`${baseId}-tab-${item.id}`}
+            hidden={!selected}
+          >
+            {item.content}
+          </div>
+        );
+      })}
     </div>
   );
 }

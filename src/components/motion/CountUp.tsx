@@ -50,8 +50,10 @@ export function CountUp({
     const { target, prefix, suffix } = parsed;
     const start = performance.now();
     let frame = 0;
+    let cancelled = false;
 
     const tick = (now: number) => {
+      if (cancelled) return;
       const progress = Math.min(1, (now - start) / durationMs);
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = Math.round(target * eased);
@@ -64,7 +66,10 @@ export function CountUp({
     };
 
     frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(frame);
+    };
   }, [durationMs, inView, parsed, shouldAnimate, value]);
 
   return (
